@@ -75,9 +75,10 @@ var basic = defaultClient.authentications['basic'];
 basic.username = 'YOUR USERNAME'
 basic.password = 'YOUR PASSWORD'
 
-var api = new ProfessorBentleyElectronicsRetailApi.CartApi()
-var cartid = new ProfessorBentleyElectronicsRetailApi.Componentsparameterscartid(); // {Componentsparameterscartid} 
-
+var api = new ProfessorBentleyElectronicsRetailApi.AuthApi()
+var opts = { 
+  'body': new ProfessorBentleyElectronicsRetailApi.User() // {User} A new user record to add to the system
+};
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
@@ -85,7 +86,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.addCartItems(cartid, callback);
+api.registerNewUser(opts, callback);
 ```
 
 ## Documentation for API Endpoints
@@ -94,6 +95,8 @@ All URIs are relative to *localhost:8080*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*ProfessorBentleyElectronicsRetailApi.AuthApi* | [**registerNewUser**](docs/AuthApi.md#registerNewUser) | **POST** /auth/register | registers a user into the systme
+*ProfessorBentleyElectronicsRetailApi.AuthApi* | [**userLogin**](docs/AuthApi.md#userLogin) | **POST** /auth/login | authorizes user to use system
 *ProfessorBentleyElectronicsRetailApi.CartApi* | [**addCartItems**](docs/CartApi.md#addCartItems) | **POST** /cart/{cartid} | Adds items to cart
 *ProfessorBentleyElectronicsRetailApi.CartApi* | [**postNewCart**](docs/CartApi.md#postNewCart) | **POST** /cart | creates a new user cart
 *ProfessorBentleyElectronicsRetailApi.CartApi* | [**updateCartItems**](docs/CartApi.md#updateCartItems) | **PUT** /cart/{cartid} | update user cart by id

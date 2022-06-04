@@ -33,6 +33,7 @@ import {Type} from './model/Type';
 import {User} from './model/User';
 import {UserAddress} from './model/UserAddress';
 import {Vendor} from './model/Vendor';
+import {AuthApi} from './api/AuthApi';
 import {CartApi} from './api/CartApi';
 import {CheckoutApi} from './api/CheckoutApi';
 import {OrdersApi} from './api/OrdersApi';
@@ -192,6 +193,12 @@ export {
      * @property {module:model/Vendor}
      */
     Vendor,
+
+    /**
+    * The AuthApi service constructor.
+    * @property {module:api/AuthApi}
+    */
+    AuthApi,
 
     /**
     * The CartApi service constructor.

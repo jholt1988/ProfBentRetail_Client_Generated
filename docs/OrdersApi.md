@@ -53,7 +53,7 @@ This endpoint does not need any parameter.
 
 <a name="postNewOrder"></a>
 # **postNewOrder**
-> User postNewOrder(orderid)
+> Order postNewOrder(orderid)
 
 post a new user order
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**User**](User.md)
+[**Order**](Order.md)
 
 ### Authorization
 

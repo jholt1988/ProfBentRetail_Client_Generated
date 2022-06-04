@@ -72,7 +72,7 @@
               return;
             }
             // TODO: update response assertions
-            expect(data).to.be.a(ProfessorBentleyElectronicsRetailApi.User);
+            expect(data).to.be.a(ProfessorBentleyElectronicsRetailApi.Order);
 
             done();
           });

@@ -18,7 +18,6 @@ import {Componentsparametersorderid} from '../model/Componentsparametersorderid'
 import {InlineResponse404} from '../model/InlineResponse404';
 import {Order} from '../model/Order';
 import {Payment} from '../model/Payment';
-import {User} from '../model/User';
 
 /**
 * Orders service.
@@ -85,7 +84,7 @@ export class OrdersApi {
      * Callback function to receive the result of the postNewOrder operation.
      * @callback moduleapi/OrdersApi~postNewOrderCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/User{ data The data returned by the service call.
+     * @param {module:model/Order{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -120,7 +119,7 @@ export class OrdersApi {
       let authNames = ['basic'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = User;
+      let returnType = Order;
 
       return this.apiClient.callApi(
         '/orders/{orderid}', 'POST',

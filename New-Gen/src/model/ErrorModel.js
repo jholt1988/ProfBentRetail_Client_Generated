@@ -1,6 +1,6 @@
 /*
- * Prof Bentley Ecommerce API
- * A Ecommerce API
+ * Professor Bentley Electronics Retail API
+ * An ecommerce REST API for a retail electronics store. 
  *
  * OpenAPI spec version: 1.5
  * Contact: jordanh316@gmail.com

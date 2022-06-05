@@ -1,6 +1,6 @@
 /*
- * Prof Bentley Ecommerce API
- * A Ecommerce API
+ * Professor Bentley Electronics Retail API
+ * An ecommerce REST API for a retail electronics store. 
  *
  * OpenAPI spec version: 1.5
  * Contact: jordanh316@gmail.com
@@ -33,15 +33,16 @@ export class ApiClient {
         /**
          * The base URL against which to resolve every API call's (relative) path.
          * @type {String}
-         * @default https://virtserver.swaggerhub.com/holtenterprises/prof-bentley_ecommerce_api/1.0
+         * @default https://virtserver.swaggerhub.com/holtenterprises/prof-bentley_ecommerce_api/1.5
          */
-        this.basePath = 'https://virtserver.swaggerhub.com/holtenterprises/prof-bentley_ecommerce_api/1.0'.replace(/\/+$/, '');
+        this.basePath = 'https://virtserver.swaggerhub.com/holtenterprises/prof-bentley_ecommerce_api/1.5'.replace(/\/+$/, '');
 
         /**
          * The authentication methods to be included for all API calls.
          * @type {Array.<String>}
          */
         this.authentications = {
+            'basic': {type: 'basic'}
         }
 
         /**

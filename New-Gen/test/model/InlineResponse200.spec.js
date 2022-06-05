@@ -1,6 +1,6 @@
 /*
- * Prof Bentley Ecommerce API
- * A Ecommerce API
+ * Professor Bentley Electronics Retail API
+ * An ecommerce REST API for a retail electronics store. 
  *
  * OpenAPI spec version: 1.5
  * Contact: jordanh316@gmail.com
@@ -22,9 +22,9 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ProfBentleyEcommerceApi);
+    factory(root.expect, root.ProfessorBentleyElectronicsRetailApi);
   }
-}(this, function(expect, ProfBentleyEcommerceApi) {
+}(this, function(expect, ProfessorBentleyElectronicsRetailApi) {
   'use strict';
 
   var instance;
@@ -32,30 +32,24 @@
   describe('(package)', function() {
     describe('InlineResponse200', function() {
       beforeEach(function() {
-        instance = new ProfBentleyEcommerceApi.InlineResponse200();
+        instance = new ProfessorBentleyElectronicsRetailApi.InlineResponse200();
       });
 
       it('should create an instance of InlineResponse200', function() {
         // TODO: update the code to test InlineResponse200
-        expect(instance).to.be.a(ProfBentleyEcommerceApi.InlineResponse200);
+        expect(instance).to.be.a(ProfessorBentleyElectronicsRetailApi.InlineResponse200);
       });
 
-      it('should have the property recieptID (base name: "recieptID")', function() {
-        // TODO: update the code to test the property recieptID
-        expect(instance).to.have.property('recieptID');
-        // expect(instance.recieptID).to.be(expectedValueLiteral);
+      it('should have the property cart (base name: "cart")', function() {
+        // TODO: update the code to test the property cart
+        expect(instance).to.have.property('cart');
+        // expect(instance.cart).to.be(expectedValueLiteral);
       });
 
-      it('should have the property total (base name: "total")', function() {
-        // TODO: update the code to test the property total
-        expect(instance).to.have.property('total');
-        // expect(instance.total).to.be(expectedValueLiteral);
-      });
-
-      it('should have the property confirmationNumber (base name: "confirmationNumber")', function() {
-        // TODO: update the code to test the property confirmationNumber
-        expect(instance).to.have.property('confirmationNumber');
-        // expect(instance.confirmationNumber).to.be(expectedValueLiteral);
+      it('should have the property cartItems (base name: "cartItems")', function() {
+        // TODO: update the code to test the property cartItems
+        expect(instance).to.have.property('cartItems');
+        // expect(instance.cartItems).to.be(expectedValueLiteral);
       });
 
     });

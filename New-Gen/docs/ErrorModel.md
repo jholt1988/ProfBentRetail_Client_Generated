@@ -1,4 +1,4 @@
-# ProfBentleyEcommerceApi.ErrorModel
+# ProfessorBentleyElectronicsRetailApi.ErrorModel
 
 ## Properties
 Name | Type | Description | Notes

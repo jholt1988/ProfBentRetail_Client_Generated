@@ -1,6 +1,6 @@
 /*
- * Prof Bentley Ecommerce API
- * A Ecommerce API
+ * Professor Bentley Electronics Retail API
+ * An ecommerce REST API for a retail electronics store. 
  *
  * OpenAPI spec version: 1.5
  * Contact: jordanh316@gmail.com
@@ -14,11 +14,9 @@
  *
  */
 import {ApiClient} from "../ApiClient";
-import {Address} from '../model/Address';
-import {ComponentsparametersvendorID} from '../model/ComponentsparametersvendorID';
-import {ExtendedErrorModel} from '../model/ExtendedErrorModel';
-import {Product} from '../model/Product';
+import {InlineResponse404} from '../model/InlineResponse404';
 import {Vendor} from '../model/Vendor';
+import {Vendorpropertiesvid} from '../model/Vendorpropertiesvid';
 
 /**
 * Vendors service.
@@ -40,66 +38,20 @@ export class VendorsApi {
     }
 
     /**
-     * Callback function to receive the result of the deleteVendor operation.
-     * @callback moduleapi/VendorsApi~deleteVendorCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete Vendor
-     * This operation deletes a vendor records
-     * @param {module:model/ComponentsparametersvendorID} vendorID 
-     * @param {module:api/VendorsApi~deleteVendorCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    deleteVendor(vendorID, callback) {
-      
-      let postBody = null;
-      // verify the required parameter 'vendorID' is set
-      if (vendorID === undefined || vendorID === null) {
-        throw new Error("Missing the required parameter 'vendorID' when calling deleteVendor");
-      }
-
-      let pathParams = {
-        'vendorID': vendorID
-      };
-      let queryParams = {
-        
-      };
-      let headerParams = {
-        
-      };
-      let formParams = {
-        
-      };
-
-      let authNames = [];
-      let contentTypes = [];
-      let accepts = [];
-      let returnType = null;
-
-      return this.apiClient.callApi(
-        '/api/store/vendors/delete/{vendorID}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-    /**
-     * Callback function to receive the result of the getAllVendors operation.
-     * @callback moduleapi/VendorsApi~getAllVendorsCallback
+     * Callback function to receive the result of the getAllvendors operation.
+     * @callback moduleapi/VendorsApi~getAllvendorsCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/Vendor>{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Get all vendors
-     * This operation gets all vendors data
-     * @param {module:api/VendorsApi~getAllVendorsCallback} callback The callback function, accepting three arguments: error, data, response
+     * fetchs all vendor records
+     * endpoint to get an array of all vendor records
+     * @param {module:api/VendorsApi~getAllvendorsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
-    getAllVendors(callback) {
+    getAllvendors(callback) {
       
       let postBody = null;
 
@@ -116,13 +68,13 @@ export class VendorsApi {
         
       };
 
-      let authNames = [];
+      let authNames = ['basic'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Vendor];
 
       return this.apiClient.callApi(
-        '/api/store/vendors', 'GET',
+        '/store/vendors', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -136,22 +88,22 @@ export class VendorsApi {
      */
 
     /**
-     * Get vendor 
-     * This operation retrieves a vendor record with matching ID
-     * @param {module:model/ComponentsparametersvendorID} vendorID 
+     * get user record by id
+     * endpoint to get a single vendor record
+     * @param {module:model/Vendorpropertiesvid} vendorid 
      * @param {module:api/VendorsApi~getVendorCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
-    getVendor(vendorID, callback) {
+    getVendor(vendorid, callback) {
       
       let postBody = null;
-      // verify the required parameter 'vendorID' is set
-      if (vendorID === undefined || vendorID === null) {
-        throw new Error("Missing the required parameter 'vendorID' when calling getVendor");
+      // verify the required parameter 'vendorid' is set
+      if (vendorid === undefined || vendorid === null) {
+        throw new Error("Missing the required parameter 'vendorid' when calling getVendor");
       }
 
       let pathParams = {
-        'vendorID': vendorID
+        'vendorid': vendorid
       };
       let queryParams = {
         
@@ -163,62 +115,13 @@ export class VendorsApi {
         
       };
 
-      let authNames = [];
+      let authNames = ['basic'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Vendor;
 
       return this.apiClient.callApi(
-        '/api/store/vendors/{vendorID}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-    /**
-     * Callback function to receive the result of the postVendor operation.
-     * @callback moduleapi/VendorsApi~postVendorCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vendor{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Post a new vendor record
-     * This operation creates a new vendor record
-     * @param {Object} opts Optional parameters
-     * @param {module:model/Vendor} opts.body vendor to add to system
-     * @param {String} opts.id 
-     * @param {String} opts.vendorName 
-     * @param {String} opts.email 
-     * @param {String} opts.phoneNumber 
-     * @param {module:model/Address} opts.address 
-     * @param {module:api/VendorsApi~postVendorCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
-     */
-    postVendor(opts, callback) {
-      opts = opts || {};
-      let postBody = opts['body'];
-
-      let pathParams = {
-        
-      };
-      let queryParams = {
-        
-      };
-      let headerParams = {
-        
-      };
-      let formParams = {
-        'id': opts['id'],'vendorName': opts['vendorName'],'email': opts['email'],'phoneNumber': opts['phoneNumber'],'address': opts['address']
-      };
-
-      let authNames = [];
-      let contentTypes = ['application/urlencoded', 'application/json', 'application/x-www-form-urlencoded'];
-      let accepts = ['application/json'];
-      let returnType = Vendor;
-
-      return this.apiClient.callApi(
-        '/api/store/vendors/newvendor', 'POST',
+        '/store/vendors/{vendorid}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -227,27 +130,29 @@ export class VendorsApi {
      * Callback function to receive the result of the updateVendor operation.
      * @callback moduleapi/VendorsApi~updateVendorCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Product>{ data The data returned by the service call.
+     * @param {module:model/Vendor{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Updates a vendor record
-     * This operation updates a vendor record
-     * @param {module:model/ComponentsparametersvendorID} vendorID 
+     * update vendor record by id
+     * endpoint to update a single vendor record
+     * @param {module:model/Vendorpropertiesvid} vendorid 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/Vendor} opts.body A new user order to add to the system
      * @param {module:api/VendorsApi~updateVendorCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
-    updateVendor(vendorID, callback) {
-      
-      let postBody = null;
-      // verify the required parameter 'vendorID' is set
-      if (vendorID === undefined || vendorID === null) {
-        throw new Error("Missing the required parameter 'vendorID' when calling updateVendor");
+    updateVendor(vendorid, opts, callback) {
+      opts = opts || {};
+      let postBody = opts['body'];
+      // verify the required parameter 'vendorid' is set
+      if (vendorid === undefined || vendorid === null) {
+        throw new Error("Missing the required parameter 'vendorid' when calling updateVendor");
       }
 
       let pathParams = {
-        'vendorID': vendorID
+        'vendorid': vendorid
       };
       let queryParams = {
         
@@ -259,13 +164,13 @@ export class VendorsApi {
         
       };
 
-      let authNames = [];
-      let contentTypes = [];
+      let authNames = ['basic'];
+      let contentTypes = ['application/json', 'mulipart/formdata'];
       let accepts = ['application/json'];
-      let returnType = [Product];
+      let returnType = Vendor;
 
       return this.apiClient.callApi(
-        '/api/store/vendors/edit/{vendorID}', 'PUT',
+        '/store/vendors/{vendorid}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

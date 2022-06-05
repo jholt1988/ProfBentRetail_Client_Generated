@@ -1,6 +1,6 @@
 /*
- * Prof Bentley Ecommerce API
- * A Ecommerce API
+ * Professor Bentley Electronics Retail API
+ * An ecommerce REST API for a retail electronics store. 
  *
  * OpenAPI spec version: 1.5
  * Contact: jordanh316@gmail.com
@@ -22,9 +22,9 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ProfBentleyEcommerceApi);
+    factory(root.expect, root.ProfessorBentleyElectronicsRetailApi);
   }
-}(this, function(expect, ProfBentleyEcommerceApi) {
+}(this, function(expect, ProfessorBentleyElectronicsRetailApi) {
   'use strict';
 
   var instance;
@@ -32,18 +32,18 @@
   describe('(package)', function() {
     describe('User', function() {
       beforeEach(function() {
-        instance = new ProfBentleyEcommerceApi.User();
+        instance = new ProfessorBentleyElectronicsRetailApi.User();
       });
 
       it('should create an instance of User', function() {
         // TODO: update the code to test User
-        expect(instance).to.be.a(ProfBentleyEcommerceApi.User);
+        expect(instance).to.be.a(ProfessorBentleyElectronicsRetailApi.User);
       });
 
-      it('should have the property userID (base name: "userID")', function() {
-        // TODO: update the code to test the property userID
-        expect(instance).to.have.property('userID');
-        // expect(instance.userID).to.be(expectedValueLiteral);
+      it('should have the property uid (base name: "uid")', function() {
+        // TODO: update the code to test the property uid
+        expect(instance).to.have.property('uid');
+        // expect(instance.uid).to.be(expectedValueLiteral);
       });
 
       it('should have the property username (base name: "username")', function() {
@@ -76,16 +76,16 @@
         // expect(instance.email).to.be(expectedValueLiteral);
       });
 
-      it('should have the property DOB (base name: "DOB")', function() {
-        // TODO: update the code to test the property DOB
-        expect(instance).to.have.property('DOB');
-        // expect(instance.DOB).to.be(expectedValueLiteral);
+      it('should have the property phoneNumber (base name: "phoneNumber")', function() {
+        // TODO: update the code to test the property phoneNumber
+        expect(instance).to.have.property('phoneNumber');
+        // expect(instance.phoneNumber).to.be(expectedValueLiteral);
       });
 
-      it('should have the property role (base name: "role")', function() {
-        // TODO: update the code to test the property role
-        expect(instance).to.have.property('role');
-        // expect(instance.role).to.be(expectedValueLiteral);
+      it('should have the property dateOfBirth (base name: "dateOfBirth")', function() {
+        // TODO: update the code to test the property dateOfBirth
+        expect(instance).to.have.property('dateOfBirth');
+        // expect(instance.dateOfBirth).to.be(expectedValueLiteral);
       });
 
       it('should have the property createdOn (base name: "createdOn")', function() {

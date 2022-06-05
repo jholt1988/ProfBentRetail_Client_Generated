@@ -1,6 +1,6 @@
 /*
- * Prof Bentley Ecommerce API
- * A Ecommerce API
+ * Professor Bentley Electronics Retail API
+ * An ecommerce REST API for a retail electronics store. 
  *
  * OpenAPI spec version: 1.5
  * Contact: jordanh316@gmail.com
@@ -22,61 +22,25 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ProfBentleyEcommerceApi);
+    factory(root.expect, root.ProfessorBentleyElectronicsRetailApi);
   }
-}(this, function(expect, ProfBentleyEcommerceApi) {
+}(this, function(expect, ProfessorBentleyElectronicsRetailApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ProfBentleyEcommerceApi.ProductsApi();
+    instance = new ProfessorBentleyElectronicsRetailApi.ProductsApi();
   });
 
   describe('(package)', function() {
     describe('ProductsApi', function() {
-      describe('deleteProduct', function() {
-        it('should call deleteProduct successfully', function(done) {
-          // TODO: uncomment, update parameter values for deleteProduct call
+      describe('getAllproducts', function() {
+        it('should call getAllproducts successfully', function(done) {
+          // TODO: uncomment getAllproducts call and complete the assertions
           /*
 
-          instance.deleteProduct(productID, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
-
-            done();
-          });
-          */
-          // TODO: uncomment and complete method invocation above, then delete this line and the next:
-          done();
-        });
-      });
-      describe('filterProducts', function() {
-        it('should call filterProducts successfully', function(done) {
-          // TODO: uncomment filterProducts call
-          /*
-
-          instance.filterProducts(function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
-
-            done();
-          });
-          */
-          // TODO: uncomment and complete method invocation above, then delete this line and the next:
-          done();
-        });
-      });
-      describe('getAllProducts', function() {
-        it('should call getAllProducts successfully', function(done) {
-          // TODO: uncomment getAllProducts call and complete the assertions
-          /*
-
-          instance.getAllProducts(function(error, data, response) {
+          instance.getAllproducts(function(error, data, response) {
             if (error) {
               done(error);
               return;
@@ -87,7 +51,7 @@
             expect(dataCtr).to.not.be.empty();
             for (let p in dataCtr) {
               let data = dataCtr[p];
-              expect(data).to.be.a(ProfBentleyEcommerceApi.Cart);
+              expect(data).to.be.a(ProfessorBentleyElectronicsRetailApi.Product);
             }
 
             done();
@@ -102,52 +66,13 @@
           // TODO: uncomment, update parameter values for getProduct call and complete the assertions
           /*
 
-          instance.getProduct(productID, function(error, data, response) {
+          instance.getProduct(productid, function(error, data, response) {
             if (error) {
               done(error);
               return;
             }
             // TODO: update response assertions
-            expect(data).to.be.a(ProfBentleyEcommerceApi.Product);
-
-            done();
-          });
-          */
-          // TODO: uncomment and complete method invocation above, then delete this line and the next:
-          done();
-        });
-      });
-      describe('postProduct', function() {
-        it('should call postProduct successfully', function(done) {
-          // TODO: uncomment, update parameter values for postProduct call and complete the assertions
-          /*
-          var opts = {};
-
-          instance.postProduct(opts, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
-            // TODO: update response assertions
-            expect(data).to.be.a(ProfBentleyEcommerceApi.Product);
-
-            done();
-          });
-          */
-          // TODO: uncomment and complete method invocation above, then delete this line and the next:
-          done();
-        });
-      });
-      describe('searchStore', function() {
-        it('should call searchStore successfully', function(done) {
-          // TODO: uncomment, update parameter values for searchStore call
-          /*
-
-          instance.searchStore(searchterm, category, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
+            expect(data).to.be.a(ProfessorBentleyElectronicsRetailApi.Product);
 
             done();
           });
@@ -160,20 +85,15 @@
         it('should call updateProduct successfully', function(done) {
           // TODO: uncomment, update parameter values for updateProduct call and complete the assertions
           /*
+          var opts = {};
 
-          instance.updateProduct(productID, function(error, data, response) {
+          instance.updateProduct(productid, opts, function(error, data, response) {
             if (error) {
               done(error);
               return;
             }
             // TODO: update response assertions
-            let dataCtr = data;
-            expect(dataCtr).to.be.an(Array);
-            expect(dataCtr).to.not.be.empty();
-            for (let p in dataCtr) {
-              let data = dataCtr[p];
-              expect(data).to.be.a(ProfBentleyEcommerceApi.Product);
-            }
+            expect(data).to.be.a(ProfessorBentleyElectronicsRetailApi.User);
 
             done();
           });

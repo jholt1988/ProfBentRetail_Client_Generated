@@ -1,6 +1,6 @@
 /*
- * Prof Bentley Ecommerce API
- * A Ecommerce API
+ * Professor Bentley Electronics Retail API
+ * An ecommerce REST API for a retail electronics store. 
  *
  * OpenAPI spec version: 1.5
  * Contact: jordanh316@gmail.com
@@ -14,7 +14,6 @@
  *
  */
 import {ApiClient} from '../ApiClient';
-import {Address} from './Address';
 
 /**
  * The Vendor model module.
@@ -24,6 +23,7 @@ import {Address} from './Address';
 export class Vendor {
   /**
    * Constructs a new <code>Vendor</code>.
+   * Vendor record with vendor info
    * @alias module:model/Vendor
    * @class
    */
@@ -40,25 +40,27 @@ export class Vendor {
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new Vendor();
-      if (data.hasOwnProperty('id'))
-        obj.id = ApiClient.convertToType(data['id'], 'String');
+      if (data.hasOwnProperty('vid'))
+        obj.vid = ApiClient.convertToType(data['vid'], 'String');
       if (data.hasOwnProperty('vendorName'))
         obj.vendorName = ApiClient.convertToType(data['vendorName'], 'String');
-      if (data.hasOwnProperty('email'))
-        obj.email = ApiClient.convertToType(data['email'], 'String');
       if (data.hasOwnProperty('phoneNumber'))
         obj.phoneNumber = ApiClient.convertToType(data['phoneNumber'], 'String');
-      if (data.hasOwnProperty('address'))
-        obj.address = Address.constructFromObject(data['address']);
+      if (data.hasOwnProperty('email'))
+        obj.email = ApiClient.convertToType(data['email'], 'String');
+      if (data.hasOwnProperty('createdOn'))
+        obj.createdOn = ApiClient.convertToType(data['createdOn'], 'Date');
+      if (data.hasOwnProperty('updatedOn'))
+        obj.updatedOn = ApiClient.convertToType(data['updatedOn'], 'Date');
     }
     return obj;
   }
 }
 
 /**
- * @member {String} id
+ * @member {String} vid
  */
-Vendor.prototype.id = undefined;
+Vendor.prototype.vid = undefined;
 
 /**
  * @member {String} vendorName
@@ -66,17 +68,22 @@ Vendor.prototype.id = undefined;
 Vendor.prototype.vendorName = undefined;
 
 /**
- * @member {String} email
- */
-Vendor.prototype.email = undefined;
-
-/**
  * @member {String} phoneNumber
  */
 Vendor.prototype.phoneNumber = undefined;
 
 /**
- * @member {module:model/Address} address
+ * @member {String} email
  */
-Vendor.prototype.address = undefined;
+Vendor.prototype.email = undefined;
+
+/**
+ * @member {Date} createdOn
+ */
+Vendor.prototype.createdOn = undefined;
+
+/**
+ * @member {Date} updatedOn
+ */
+Vendor.prototype.updatedOn = undefined;
 

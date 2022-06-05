@@ -1,6 +1,6 @@
 /*
- * Prof Bentley Ecommerce API
- * A Ecommerce API
+ * Professor Bentley Electronics Retail API
+ * An ecommerce REST API for a retail electronics store. 
  *
  * OpenAPI spec version: 1.5
  * Contact: jordanh316@gmail.com
@@ -22,29 +22,32 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ProfBentleyEcommerceApi);
+    factory(root.expect, root.ProfessorBentleyElectronicsRetailApi);
   }
-}(this, function(expect, ProfBentleyEcommerceApi) {
+}(this, function(expect, ProfessorBentleyElectronicsRetailApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ProfBentleyEcommerceApi.AuthApi();
+    instance = new ProfessorBentleyElectronicsRetailApi.AuthApi();
   });
 
   describe('(package)', function() {
     describe('AuthApi', function() {
-      describe('login', function() {
-        it('should call login successfully', function(done) {
-          // TODO: uncomment login call
+      describe('registerNewUser', function() {
+        it('should call registerNewUser successfully', function(done) {
+          // TODO: uncomment, update parameter values for registerNewUser call and complete the assertions
           /*
+          var opts = {};
 
-          instance.login(function(error, data, response) {
+          instance.registerNewUser(opts, function(error, data, response) {
             if (error) {
               done(error);
               return;
             }
+            // TODO: update response assertions
+            expect(data).to.be.a(ProfessorBentleyElectronicsRetailApi.User);
 
             done();
           });
@@ -53,18 +56,18 @@
           done();
         });
       });
-      describe('register', function() {
-        it('should call register successfully', function(done) {
-          // TODO: uncomment register call and complete the assertions
+      describe('userLogin', function() {
+        it('should call userLogin successfully', function(done) {
+          // TODO: uncomment userLogin call and complete the assertions
           /*
 
-          instance.register(function(error, data, response) {
+          instance.userLogin(function(error, data, response) {
             if (error) {
               done(error);
               return;
             }
             // TODO: update response assertions
-            expect(data).to.be.a(ProfBentleyEcommerceApi.User);
+            expect(data).to.be.a(ProfessorBentleyElectronicsRetailApi.User);
 
             done();
           });

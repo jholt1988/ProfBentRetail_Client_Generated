@@ -1,120 +1,32 @@
-# ProfBentleyEcommerceApi.OrdersApi
+# ProfessorBentleyElectronicsRetailApi.OrdersApi
 
-All URIs are relative to *https://virtserver.swaggerhub.com/holtenterprises/prof-bentley_ecommerce_api/1.0*
+All URIs are relative to *https://virtserver.swaggerhub.com/holtenterprises/prof-bentley_ecommerce_api/1.5*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**checkout**](OrdersApi.md#checkout) | **POST** /api/user/{userID}/order/{orderID}/checkout | Post user payment information 
-[**deleteUserOrder**](OrdersApi.md#deleteUserOrder) | **DELETE** /api/user/{userID}/order/delete/{orderID} | Delete User Order
-[**getAllOrders**](OrdersApi.md#getAllOrders) | **GET** /api/orders | Get all orders data
-[**getAllUserOrders**](OrdersApi.md#getAllUserOrders) | **GET** /api/user/{userID}/orders | Get all user orders
-[**postUserOrder**](OrdersApi.md#postUserOrder) | **POST** /api/user/{userID}/neworder | Post a new user order record 
-[**updateUserOrder**](OrdersApi.md#updateUserOrder) | **PUT** /api/user/{userID}/edit/{orderID} | updates user order
+[**getAllUserOrders**](OrdersApi.md#getAllUserOrders) | **GET** /orders | fetchs all user orders
+[**postNewOrder**](OrdersApi.md#postNewOrder) | **POST** /orders/{orderid} | post a new user order
+[**postPayment**](OrdersApi.md#postPayment) | **POST** /checkout/{orderid} | post a payment for user order
 
-<a name="checkout"></a>
-# **checkout**
-> InlineResponse200 checkout(userID, orderID)
+<a name="getAllUserOrders"></a>
+# **getAllUserOrders**
+> [Order] getAllUserOrders()
 
-Post user payment information 
+fetchs all user orders
 
-This operation post user payment information and returns success or failure of payment
+endpoint to get an array of all user orders
 
 ### Example
 ```javascript
-import {ProfBentleyEcommerceApi} from 'prof_bentley_ecommerce_api';
+import {ProfessorBentleyElectronicsRetailApi} from 'professor_bentley_electronics_retail_api';
+let defaultClient = ProfessorBentleyElectronicsRetailApi.ApiClient.instance;
+// Configure HTTP basic authorization: basic
+let basic = defaultClient.authentications['basic'];
+basic.username = 'YOUR USERNAME';
+basic.password = 'YOUR PASSWORD';
 
-let apiInstance = new ProfBentleyEcommerceApi.OrdersApi();
-let userID = new ProfBentleyEcommerceApi.ComponentsparametersuserID(); // ComponentsparametersuserID | 
-let orderID = new ProfBentleyEcommerceApi.ComponentsparametersorderID(); // ComponentsparametersorderID | 
-
-apiInstance.checkout(userID, orderID, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userID** | [**ComponentsparametersuserID**](.md)|  | 
- **orderID** | [**ComponentsparametersorderID**](.md)|  | 
-
-### Return type
-
-[**InlineResponse200**](InlineResponse200.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="deleteUserOrder"></a>
-# **deleteUserOrder**
-> deleteUserOrder(userID, orderID)
-
-Delete User Order
-
-This operation delete user order with matching user and order ID
-
-### Example
-```javascript
-import {ProfBentleyEcommerceApi} from 'prof_bentley_ecommerce_api';
-
-let apiInstance = new ProfBentleyEcommerceApi.OrdersApi();
-let userID = new ProfBentleyEcommerceApi.ComponentsparametersuserID(); // ComponentsparametersuserID | 
-let orderID = new ProfBentleyEcommerceApi.ComponentsparametersorderID(); // ComponentsparametersorderID | 
-
-apiInstance.deleteUserOrder(userID, orderID, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-});
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userID** | [**ComponentsparametersuserID**](.md)|  | 
- **orderID** | [**ComponentsparametersorderID**](.md)|  | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="getAllOrders"></a>
-# **getAllOrders**
-> [Product] getAllOrders()
-
-Get all orders data
-
-This operation gets all orders data
-
-### Example
-```javascript
-import {ProfBentleyEcommerceApi} from 'prof_bentley_ecommerce_api';
-
-let apiInstance = new ProfBentleyEcommerceApi.OrdersApi();
-apiInstance.getAllOrders((error, data, response) => {
+let apiInstance = new ProfessorBentleyElectronicsRetailApi.OrdersApi();
+apiInstance.getAllUserOrders((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -128,76 +40,38 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[Product]**](Product.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="getAllUserOrders"></a>
-# **getAllUserOrders**
-> [Order] getAllUserOrders(userID)
-
-Get all user orders
-
-This operation gets all user orders matching id
-
-### Example
-```javascript
-import {ProfBentleyEcommerceApi} from 'prof_bentley_ecommerce_api';
-
-let apiInstance = new ProfBentleyEcommerceApi.OrdersApi();
-let userID = new ProfBentleyEcommerceApi.ComponentsparametersuserID(); // ComponentsparametersuserID | 
-
-apiInstance.getAllUserOrders(userID, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userID** | [**ComponentsparametersuserID**](.md)|  | 
-
-### Return type
-
 [**[Order]**](Order.md)
 
 ### Authorization
 
-No authorization required
+[basic](../README.md#basic)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="postUserOrder"></a>
-# **postUserOrder**
-> Order postUserOrder(userID)
+<a name="postNewOrder"></a>
+# **postNewOrder**
+> Order postNewOrder(orderid)
 
-Post a new user order record 
+post a new user order
 
-This operation creates a new user order record
+endpoint to post a new user order
 
 ### Example
 ```javascript
-import {ProfBentleyEcommerceApi} from 'prof_bentley_ecommerce_api';
+import {ProfessorBentleyElectronicsRetailApi} from 'professor_bentley_electronics_retail_api';
+let defaultClient = ProfessorBentleyElectronicsRetailApi.ApiClient.instance;
+// Configure HTTP basic authorization: basic
+let basic = defaultClient.authentications['basic'];
+basic.username = 'YOUR USERNAME';
+basic.password = 'YOUR PASSWORD';
 
-let apiInstance = new ProfBentleyEcommerceApi.OrdersApi();
-let userID = new ProfBentleyEcommerceApi.ComponentsparametersuserID(); // ComponentsparametersuserID | 
+let apiInstance = new ProfessorBentleyElectronicsRetailApi.OrdersApi();
+let orderid = new ProfessorBentleyElectronicsRetailApi.Orderpropertiesoid(); // Orderpropertiesoid | 
 
-apiInstance.postUserOrder(userID, (error, data, response) => {
+apiInstance.postNewOrder(orderid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -210,7 +84,7 @@ apiInstance.postUserOrder(userID, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userID** | [**ComponentsparametersuserID**](.md)|  | 
+ **orderid** | [**Orderpropertiesoid**](.md)|  | 
 
 ### Return type
 
@@ -218,30 +92,36 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basic](../README.md#basic)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="updateUserOrder"></a>
-# **updateUserOrder**
-> [Order] updateUserOrder(userID, orderID)
+<a name="postPayment"></a>
+# **postPayment**
+> Payment postPayment(orderid, opts)
 
-updates user order
+post a payment for user order
 
-This operation is used to update user order record
+endpoint to checkout a user order
 
 ### Example
 ```javascript
-import {ProfBentleyEcommerceApi} from 'prof_bentley_ecommerce_api';
+import {ProfessorBentleyElectronicsRetailApi} from 'professor_bentley_electronics_retail_api';
+let defaultClient = ProfessorBentleyElectronicsRetailApi.ApiClient.instance;
+// Configure HTTP basic authorization: basic
+let basic = defaultClient.authentications['basic'];
+basic.username = 'YOUR USERNAME';
+basic.password = 'YOUR PASSWORD';
 
-let apiInstance = new ProfBentleyEcommerceApi.OrdersApi();
-let userID = new ProfBentleyEcommerceApi.ComponentsparametersuserID(); // ComponentsparametersuserID | 
-let orderID = new ProfBentleyEcommerceApi.ComponentsparametersorderID(); // ComponentsparametersorderID | 
-
-apiInstance.updateUserOrder(userID, orderID, (error, data, response) => {
+let apiInstance = new ProfessorBentleyElectronicsRetailApi.OrdersApi();
+let orderid = new ProfessorBentleyElectronicsRetailApi.Orderpropertiesoid(); // Orderpropertiesoid | 
+let opts = { 
+  'body': new ProfessorBentleyElectronicsRetailApi.Payment() // Payment | a new user payment object
+};
+apiInstance.postPayment(orderid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -254,19 +134,19 @@ apiInstance.updateUserOrder(userID, orderID, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userID** | [**ComponentsparametersuserID**](.md)|  | 
- **orderID** | [**ComponentsparametersorderID**](.md)|  | 
+ **orderid** | [**Orderpropertiesoid**](.md)|  | 
+ **body** | [**Payment**](Payment.md)| a new user payment object | [optional] 
 
 ### Return type
 
-[**[Order]**](Order.md)
+[**Payment**](Payment.md)
 
 ### Authorization
 
-No authorization required
+[basic](../README.md#basic)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json, mulipart/formdata
  - **Accept**: application/json
 

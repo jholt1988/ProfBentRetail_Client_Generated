@@ -1,17 +1,16 @@
-# ProfBentleyEcommerceApi.Product
+# ProfessorBentleyElectronicsRetailApi.Product
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | [optional] 
+**pid** | **String** |  | [optional] 
 **productName** | **String** |  | [optional] 
-**price** | **Number** |  | [optional] 
 **description** | **String** |  | [optional] 
-**inventoryQuantity** | **Number** |  | [optional] 
-**category** | **String** |  | [optional] 
-**isFeatured** | **Boolean** |  | [optional] 
-**vendorId** | **String** |  | [optional] 
-**image** | **[Blob]** |  | [optional] 
-**unit** | **String** |  | [optional] 
+**price** | **Number** |  | [optional] 
+**onHandQuantity** | **Number** |  | [optional] 
+**isFeature** | **Boolean** |  | [optional] 
+**catId** | **Number** |  | [optional] 
+**image** | **Blob** |  | [optional] 
+**vid** | **String** |  | [optional] 
 **createdOn** | **Date** |  | [optional] 
 **updatedOn** | **Date** |  | [optional] 

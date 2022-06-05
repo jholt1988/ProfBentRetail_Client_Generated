@@ -1,6 +1,6 @@
 /*
- * Prof Bentley Ecommerce API
- * A Ecommerce API
+ * Professor Bentley Electronics Retail API
+ * An ecommerce REST API for a retail electronics store. 
  *
  * OpenAPI spec version: 1.5
  * Contact: jordanh316@gmail.com
@@ -14,12 +14,10 @@
  *
  */
 import {ApiClient} from "../ApiClient";
-import {ComponentsparametersorderID} from '../model/ComponentsparametersorderID';
-import {ComponentsparametersuserID} from '../model/ComponentsparametersuserID';
-import {ExtendedErrorModel} from '../model/ExtendedErrorModel';
-import {InlineResponse200} from '../model/InlineResponse200';
+import {InlineResponse404} from '../model/InlineResponse404';
 import {Order} from '../model/Order';
-import {Product} from '../model/Product';
+import {Orderpropertiesoid} from '../model/Orderpropertiesoid';
+import {Payment} from '../model/Payment';
 
 /**
 * Orders service.
@@ -41,151 +39,6 @@ export class OrdersApi {
     }
 
     /**
-     * Callback function to receive the result of the checkout operation.
-     * @callback moduleapi/OrdersApi~checkoutCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse200{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Post user payment information 
-     * This operation post user payment information and returns success or failure of payment
-     * @param {module:model/ComponentsparametersuserID} userID 
-     * @param {module:model/ComponentsparametersorderID} orderID 
-     * @param {module:api/OrdersApi~checkoutCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
-     */
-    checkout(userID, orderID, callback) {
-      
-      let postBody = null;
-      // verify the required parameter 'userID' is set
-      if (userID === undefined || userID === null) {
-        throw new Error("Missing the required parameter 'userID' when calling checkout");
-      }
-      // verify the required parameter 'orderID' is set
-      if (orderID === undefined || orderID === null) {
-        throw new Error("Missing the required parameter 'orderID' when calling checkout");
-      }
-
-      let pathParams = {
-        'userID': userID,'orderID': orderID
-      };
-      let queryParams = {
-        
-      };
-      let headerParams = {
-        
-      };
-      let formParams = {
-        
-      };
-
-      let authNames = [];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = InlineResponse200;
-
-      return this.apiClient.callApi(
-        '/api/user/{userID}/order/{orderID}/checkout', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-    /**
-     * Callback function to receive the result of the deleteUserOrder operation.
-     * @callback moduleapi/OrdersApi~deleteUserOrderCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete User Order
-     * This operation delete user order with matching user and order ID
-     * @param {module:model/ComponentsparametersuserID} userID 
-     * @param {module:model/ComponentsparametersorderID} orderID 
-     * @param {module:api/OrdersApi~deleteUserOrderCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    deleteUserOrder(userID, orderID, callback) {
-      
-      let postBody = null;
-      // verify the required parameter 'userID' is set
-      if (userID === undefined || userID === null) {
-        throw new Error("Missing the required parameter 'userID' when calling deleteUserOrder");
-      }
-      // verify the required parameter 'orderID' is set
-      if (orderID === undefined || orderID === null) {
-        throw new Error("Missing the required parameter 'orderID' when calling deleteUserOrder");
-      }
-
-      let pathParams = {
-        'userID': userID,'orderID': orderID
-      };
-      let queryParams = {
-        
-      };
-      let headerParams = {
-        
-      };
-      let formParams = {
-        
-      };
-
-      let authNames = [];
-      let contentTypes = [];
-      let accepts = [];
-      let returnType = null;
-
-      return this.apiClient.callApi(
-        '/api/user/{userID}/order/delete/{orderID}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-    /**
-     * Callback function to receive the result of the getAllOrders operation.
-     * @callback moduleapi/OrdersApi~getAllOrdersCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Product>{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get all orders data
-     * This operation gets all orders data
-     * @param {module:api/OrdersApi~getAllOrdersCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
-     */
-    getAllOrders(callback) {
-      
-      let postBody = null;
-
-      let pathParams = {
-        
-      };
-      let queryParams = {
-        
-      };
-      let headerParams = {
-        
-      };
-      let formParams = {
-        
-      };
-
-      let authNames = [];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = [Product];
-
-      return this.apiClient.callApi(
-        '/api/orders', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-    /**
      * Callback function to receive the result of the getAllUserOrders operation.
      * @callback moduleapi/OrdersApi~getAllUserOrdersCallback
      * @param {String} error Error message, if any.
@@ -194,22 +47,17 @@ export class OrdersApi {
      */
 
     /**
-     * Get all user orders
-     * This operation gets all user orders matching id
-     * @param {module:model/ComponentsparametersuserID} userID 
+     * fetchs all user orders
+     * endpoint to get an array of all user orders
      * @param {module:api/OrdersApi~getAllUserOrdersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
-    getAllUserOrders(userID, callback) {
+    getAllUserOrders(callback) {
       
       let postBody = null;
-      // verify the required parameter 'userID' is set
-      if (userID === undefined || userID === null) {
-        throw new Error("Missing the required parameter 'userID' when calling getAllUserOrders");
-      }
 
       let pathParams = {
-        'userID': userID
+        
       };
       let queryParams = {
         
@@ -221,42 +69,42 @@ export class OrdersApi {
         
       };
 
-      let authNames = [];
+      let authNames = ['basic'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Order];
 
       return this.apiClient.callApi(
-        '/api/user/{userID}/orders', 'GET',
+        '/orders', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
     /**
-     * Callback function to receive the result of the postUserOrder operation.
-     * @callback moduleapi/OrdersApi~postUserOrderCallback
+     * Callback function to receive the result of the postNewOrder operation.
+     * @callback moduleapi/OrdersApi~postNewOrderCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Order{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Post a new user order record 
-     * This operation creates a new user order record
-     * @param {module:model/ComponentsparametersuserID} userID 
-     * @param {module:api/OrdersApi~postUserOrderCallback} callback The callback function, accepting three arguments: error, data, response
+     * post a new user order
+     * endpoint to post a new user order
+     * @param {module:model/Orderpropertiesoid} orderid 
+     * @param {module:api/OrdersApi~postNewOrderCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
-    postUserOrder(userID, callback) {
+    postNewOrder(orderid, callback) {
       
       let postBody = null;
-      // verify the required parameter 'userID' is set
-      if (userID === undefined || userID === null) {
-        throw new Error("Missing the required parameter 'userID' when calling postUserOrder");
+      // verify the required parameter 'orderid' is set
+      if (orderid === undefined || orderid === null) {
+        throw new Error("Missing the required parameter 'orderid' when calling postNewOrder");
       }
 
       let pathParams = {
-        'userID': userID
+        'orderid': orderid
       };
       let queryParams = {
         
@@ -268,47 +116,44 @@ export class OrdersApi {
         
       };
 
-      let authNames = [];
+      let authNames = ['basic'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Order;
 
       return this.apiClient.callApi(
-        '/api/user/{userID}/neworder', 'POST',
+        '/orders/{orderid}', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
     /**
-     * Callback function to receive the result of the updateUserOrder operation.
-     * @callback moduleapi/OrdersApi~updateUserOrderCallback
+     * Callback function to receive the result of the postPayment operation.
+     * @callback moduleapi/OrdersApi~postPaymentCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Order>{ data The data returned by the service call.
+     * @param {module:model/Payment{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * updates user order
-     * This operation is used to update user order record
-     * @param {module:model/ComponentsparametersuserID} userID 
-     * @param {module:model/ComponentsparametersorderID} orderID 
-     * @param {module:api/OrdersApi~updateUserOrderCallback} callback The callback function, accepting three arguments: error, data, response
+     * post a payment for user order
+     * endpoint to checkout a user order
+     * @param {module:model/Orderpropertiesoid} orderid 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/Payment} opts.body a new user payment object
+     * @param {module:api/OrdersApi~postPaymentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
-    updateUserOrder(userID, orderID, callback) {
-      
-      let postBody = null;
-      // verify the required parameter 'userID' is set
-      if (userID === undefined || userID === null) {
-        throw new Error("Missing the required parameter 'userID' when calling updateUserOrder");
-      }
-      // verify the required parameter 'orderID' is set
-      if (orderID === undefined || orderID === null) {
-        throw new Error("Missing the required parameter 'orderID' when calling updateUserOrder");
+    postPayment(orderid, opts, callback) {
+      opts = opts || {};
+      let postBody = opts['body'];
+      // verify the required parameter 'orderid' is set
+      if (orderid === undefined || orderid === null) {
+        throw new Error("Missing the required parameter 'orderid' when calling postPayment");
       }
 
       let pathParams = {
-        'userID': userID,'orderID': orderID
+        'orderid': orderid
       };
       let queryParams = {
         
@@ -320,13 +165,13 @@ export class OrdersApi {
         
       };
 
-      let authNames = [];
-      let contentTypes = [];
+      let authNames = ['basic'];
+      let contentTypes = ['application/json', 'mulipart/formdata'];
       let accepts = ['application/json'];
-      let returnType = [Order];
+      let returnType = Payment;
 
       return this.apiClient.callApi(
-        '/api/user/{userID}/edit/{orderID}', 'PUT',
+        '/checkout/{orderid}', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

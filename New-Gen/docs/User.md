@@ -1,15 +1,15 @@
-# ProfBentleyEcommerceApi.User
+# ProfessorBentleyElectronicsRetailApi.User
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**userID** | **String** |  | [optional] 
+**uid** | **String** |  | [optional] 
 **username** | **String** |  | [optional] 
 **password** | **String** |  | [optional] 
 **firstName** | **String** |  | [optional] 
 **lastName** | **String** |  | [optional] 
 **email** | **String** |  | [optional] 
-**DOB** | **Date** |  | [optional] 
-**role** | **String** |  | [optional] 
+**phoneNumber** | **String** |  | [optional] 
+**dateOfBirth** | **Date** |  | [optional] 
 **createdOn** | **Date** |  | [optional] 
 **updatedOn** | **Date** |  | [optional] 

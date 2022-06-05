@@ -1,14 +1,17 @@
-# ProfBentleyEcommerceApi.Order
+# ProfessorBentleyElectronicsRetailApi.Order
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** |  | [optional] 
-**userID** | **String** |  | [optional] 
-**ordersItems** | [**[OrderOrdersItems]**](OrderOrdersItems.md) |  | [optional] 
-**totalItems** | **Number** |  | [optional] 
-**taxRate** | **Number** |  | [optional] 
+**oid** | **String** |  | [optional] 
 **subtotal** | **Number** |  | [optional] 
-**grandTotal** | **Number** |  | [optional] 
-**addedDate** | **Date** |  | [optional] 
-**modifiedDate** | **Date** |  | [optional] 
+**tax** | **Number** |  | [optional] 
+**total** | **Number** |  | [optional] 
+**itemsTotal** | **Number** |  | [optional] 
+**deliveryFee** | **Number** |  | [optional] 
+**deliveryId** | **String** |  | [optional] 
+**payId** | **String** |  | [optional] 
+**items** | [**[OrderItems]**](OrderItems.md) |  | [optional] 
+**statusId** | **Number** |  | [optional] 
+**createdOn** | **Date** |  | [optional] 
+**updatedOn** | **Date** |  | [optional] 

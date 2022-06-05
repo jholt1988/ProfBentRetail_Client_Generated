@@ -1,64 +1,80 @@
-# ProfBentleyEcommerceApi.AuthApi
+# ProfessorBentleyElectronicsRetailApi.AuthApi
 
-All URIs are relative to *https://virtserver.swaggerhub.com/holtenterprises/prof-bentley_ecommerce_api/1.0*
+All URIs are relative to *https://virtserver.swaggerhub.com/holtenterprises/prof-bentley_ecommerce_api/1.5*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**login**](AuthApi.md#login) | **POST** /api/auth/login | Authorizes user 
-[**register**](AuthApi.md#register) | **POST** /api/auth/register | Create new user object
+[**registerNewUser**](AuthApi.md#registerNewUser) | **POST** /auth/register | registers a user into the systme
+[**userLogin**](AuthApi.md#userLogin) | **POST** /auth/login | authorizes user to use system
 
-<a name="login"></a>
-# **login**
-> login()
+<a name="registerNewUser"></a>
+# **registerNewUser**
+> User registerNewUser(opts)
 
-Authorizes user 
+registers a user into the systme
 
-This operation authorizes user and creates a user session 
+creates a new user record
 
 ### Example
 ```javascript
-import {ProfBentleyEcommerceApi} from 'prof_bentley_ecommerce_api';
+import {ProfessorBentleyElectronicsRetailApi} from 'professor_bentley_electronics_retail_api';
+let defaultClient = ProfessorBentleyElectronicsRetailApi.ApiClient.instance;
+// Configure HTTP basic authorization: basic
+let basic = defaultClient.authentications['basic'];
+basic.username = 'YOUR USERNAME';
+basic.password = 'YOUR PASSWORD';
 
-let apiInstance = new ProfBentleyEcommerceApi.AuthApi();
-apiInstance.login((error, data, response) => {
+let apiInstance = new ProfessorBentleyElectronicsRetailApi.AuthApi();
+let opts = { 
+  'body': new ProfessorBentleyElectronicsRetailApi.User() // User | A new user record to add to the system
+};
+apiInstance.registerNewUser(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 });
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**User**](User.md)| A new user record to add to the system | [optional] 
 
 ### Return type
 
-null (empty response body)
+[**User**](User.md)
 
 ### Authorization
 
-No authorization required
+[basic](../README.md#basic)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json, mulipart/formdata
+ - **Accept**: application/json
 
-<a name="register"></a>
-# **register**
-> User register()
+<a name="userLogin"></a>
+# **userLogin**
+> User userLogin()
 
-Create new user object
+authorizes user to use system
 
-This operation post new user object with new data
+login user into system
 
 ### Example
 ```javascript
-import {ProfBentleyEcommerceApi} from 'prof_bentley_ecommerce_api';
+import {ProfessorBentleyElectronicsRetailApi} from 'professor_bentley_electronics_retail_api';
+let defaultClient = ProfessorBentleyElectronicsRetailApi.ApiClient.instance;
+// Configure HTTP basic authorization: basic
+let basic = defaultClient.authentications['basic'];
+basic.username = 'YOUR USERNAME';
+basic.password = 'YOUR PASSWORD';
 
-let apiInstance = new ProfBentleyEcommerceApi.AuthApi();
-apiInstance.register((error, data, response) => {
+let apiInstance = new ProfessorBentleyElectronicsRetailApi.AuthApi();
+apiInstance.userLogin((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -76,7 +92,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[basic](../README.md#basic)
 
 ### HTTP request headers
 

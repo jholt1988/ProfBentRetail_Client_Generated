@@ -1,28 +1,34 @@
-# ProfBentleyEcommerceApi.CartApi
+# ProfessorBentleyElectronicsRetailApi.CartApi
 
-All URIs are relative to *https://virtserver.swaggerhub.com/holtenterprises/prof-bentley_ecommerce_api/1.0*
+All URIs are relative to *https://virtserver.swaggerhub.com/holtenterprises/prof-bentley_ecommerce_api/1.5*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getUserCart**](CartApi.md#getUserCart) | **GET** /api/user/cart/{userID} | fetch user cart
-[**updateUserCart**](CartApi.md#updateUserCart) | **PUT** /api/user/{userID}/edit/cart | Update user cart record
+[**addCartItems**](CartApi.md#addCartItems) | **POST** /cart/{cartid} | Adds items to cart
+[**postNewCart**](CartApi.md#postNewCart) | **POST** /cart | creates a new user cart
+[**updateCartItems**](CartApi.md#updateCartItems) | **PUT** /cart/{cartid} | update user cart by id
 
-<a name="getUserCart"></a>
-# **getUserCart**
-> Cart getUserCart(userID)
+<a name="addCartItems"></a>
+# **addCartItems**
+> InlineResponse200 addCartItems(cartid)
 
-fetch user cart
+Adds items to cart
 
-This operation retrieves user cart
+endpoint to add items user cart
 
 ### Example
 ```javascript
-import {ProfBentleyEcommerceApi} from 'prof_bentley_ecommerce_api';
+import {ProfessorBentleyElectronicsRetailApi} from 'professor_bentley_electronics_retail_api';
+let defaultClient = ProfessorBentleyElectronicsRetailApi.ApiClient.instance;
+// Configure HTTP basic authorization: basic
+let basic = defaultClient.authentications['basic'];
+basic.username = 'YOUR USERNAME';
+basic.password = 'YOUR PASSWORD';
 
-let apiInstance = new ProfBentleyEcommerceApi.CartApi();
-let userID = new ProfBentleyEcommerceApi.ComponentsparametersuserID(); // ComponentsparametersuserID | 
+let apiInstance = new ProfessorBentleyElectronicsRetailApi.CartApi();
+let cartid = new ProfessorBentleyElectronicsRetailApi.Cartpropertiescid(); // Cartpropertiescid | 
 
-apiInstance.getUserCart(userID, (error, data, response) => {
+apiInstance.addCartItems(cartid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -35,37 +41,85 @@ apiInstance.getUserCart(userID, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userID** | [**ComponentsparametersuserID**](.md)|  | 
+ **cartid** | [**Cartpropertiescid**](.md)|  | 
 
 ### Return type
 
-[**Cart**](Cart.md)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
-No authorization required
+[basic](../README.md#basic)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="updateUserCart"></a>
-# **updateUserCart**
-> Cart updateUserCart(userID)
+<a name="postNewCart"></a>
+# **postNewCart**
+> Cart postNewCart()
 
-Update user cart record
+creates a new user cart
 
-This operation updates user cart matching user ID
+endpoint to create a new user cart records
 
 ### Example
 ```javascript
-import {ProfBentleyEcommerceApi} from 'prof_bentley_ecommerce_api';
+import {ProfessorBentleyElectronicsRetailApi} from 'professor_bentley_electronics_retail_api';
+let defaultClient = ProfessorBentleyElectronicsRetailApi.ApiClient.instance;
+// Configure HTTP basic authorization: basic
+let basic = defaultClient.authentications['basic'];
+basic.username = 'YOUR USERNAME';
+basic.password = 'YOUR PASSWORD';
 
-let apiInstance = new ProfBentleyEcommerceApi.CartApi();
-let userID = new ProfBentleyEcommerceApi.ComponentsparametersuserID(); // ComponentsparametersuserID | 
+let apiInstance = new ProfessorBentleyElectronicsRetailApi.CartApi();
+apiInstance.postNewCart((error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
 
-apiInstance.updateUserCart(userID, (error, data, response) => {
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**Cart**](Cart.md)
+
+### Authorization
+
+[basic](../README.md#basic)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="updateCartItems"></a>
+# **updateCartItems**
+> InlineResponse200 updateCartItems(cartid)
+
+update user cart by id
+
+endpoint to update a user cart record
+
+### Example
+```javascript
+import {ProfessorBentleyElectronicsRetailApi} from 'professor_bentley_electronics_retail_api';
+let defaultClient = ProfessorBentleyElectronicsRetailApi.ApiClient.instance;
+// Configure HTTP basic authorization: basic
+let basic = defaultClient.authentications['basic'];
+basic.username = 'YOUR USERNAME';
+basic.password = 'YOUR PASSWORD';
+
+let apiInstance = new ProfessorBentleyElectronicsRetailApi.CartApi();
+let cartid = new ProfessorBentleyElectronicsRetailApi.Cartpropertiescid(); // Cartpropertiescid | 
+
+apiInstance.updateCartItems(cartid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -78,15 +132,15 @@ apiInstance.updateUserCart(userID, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userID** | [**ComponentsparametersuserID**](.md)|  | 
+ **cartid** | [**Cartpropertiescid**](.md)|  | 
 
 ### Return type
 
-[**Cart**](Cart.md)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
-No authorization required
+[basic](../README.md#basic)
 
 ### HTTP request headers
 

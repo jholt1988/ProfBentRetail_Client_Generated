@@ -1,72 +1,32 @@
-# ProfBentleyEcommerceApi.VendorsApi
+# ProfessorBentleyElectronicsRetailApi.VendorsApi
 
-All URIs are relative to *https://virtserver.swaggerhub.com/holtenterprises/prof-bentley_ecommerce_api/1.0*
+All URIs are relative to *https://virtserver.swaggerhub.com/holtenterprises/prof-bentley_ecommerce_api/1.5*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteVendor**](VendorsApi.md#deleteVendor) | **DELETE** /api/store/vendors/delete/{vendorID} | Delete Vendor
-[**getAllVendors**](VendorsApi.md#getAllVendors) | **GET** /api/store/vendors | Get all vendors
-[**getVendor**](VendorsApi.md#getVendor) | **GET** /api/store/vendors/{vendorID} | Get vendor 
-[**postVendor**](VendorsApi.md#postVendor) | **POST** /api/store/vendors/newvendor | Post a new vendor record
-[**updateVendor**](VendorsApi.md#updateVendor) | **PUT** /api/store/vendors/edit/{vendorID} | Updates a vendor record
+[**getAllvendors**](VendorsApi.md#getAllvendors) | **GET** /store/vendors | fetchs all vendor records
+[**getVendor**](VendorsApi.md#getVendor) | **GET** /store/vendors/{vendorid} | get user record by id
+[**updateVendor**](VendorsApi.md#updateVendor) | **PUT** /store/vendors/{vendorid} | update vendor record by id
 
-<a name="deleteVendor"></a>
-# **deleteVendor**
-> deleteVendor(vendorID)
+<a name="getAllvendors"></a>
+# **getAllvendors**
+> [Vendor] getAllvendors()
 
-Delete Vendor
+fetchs all vendor records
 
-This operation deletes a vendor records
+endpoint to get an array of all vendor records
 
 ### Example
 ```javascript
-import {ProfBentleyEcommerceApi} from 'prof_bentley_ecommerce_api';
+import {ProfessorBentleyElectronicsRetailApi} from 'professor_bentley_electronics_retail_api';
+let defaultClient = ProfessorBentleyElectronicsRetailApi.ApiClient.instance;
+// Configure HTTP basic authorization: basic
+let basic = defaultClient.authentications['basic'];
+basic.username = 'YOUR USERNAME';
+basic.password = 'YOUR PASSWORD';
 
-let apiInstance = new ProfBentleyEcommerceApi.VendorsApi();
-let vendorID = new ProfBentleyEcommerceApi.ComponentsparametersvendorID(); // ComponentsparametersvendorID | 
-
-apiInstance.deleteVendor(vendorID, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-});
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **vendorID** | [**ComponentsparametersvendorID**](.md)|  | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="getAllVendors"></a>
-# **getAllVendors**
-> [Vendor] getAllVendors()
-
-Get all vendors
-
-This operation gets all vendors data
-
-### Example
-```javascript
-import {ProfBentleyEcommerceApi} from 'prof_bentley_ecommerce_api';
-
-let apiInstance = new ProfBentleyEcommerceApi.VendorsApi();
-apiInstance.getAllVendors((error, data, response) => {
+let apiInstance = new ProfessorBentleyElectronicsRetailApi.VendorsApi();
+apiInstance.getAllvendors((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -84,7 +44,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[basic](../README.md#basic)
 
 ### HTTP request headers
 
@@ -93,20 +53,25 @@ No authorization required
 
 <a name="getVendor"></a>
 # **getVendor**
-> Vendor getVendor(vendorID)
+> Vendor getVendor(vendorid)
 
-Get vendor 
+get user record by id
 
-This operation retrieves a vendor record with matching ID
+endpoint to get a single vendor record
 
 ### Example
 ```javascript
-import {ProfBentleyEcommerceApi} from 'prof_bentley_ecommerce_api';
+import {ProfessorBentleyElectronicsRetailApi} from 'professor_bentley_electronics_retail_api';
+let defaultClient = ProfessorBentleyElectronicsRetailApi.ApiClient.instance;
+// Configure HTTP basic authorization: basic
+let basic = defaultClient.authentications['basic'];
+basic.username = 'YOUR USERNAME';
+basic.password = 'YOUR PASSWORD';
 
-let apiInstance = new ProfBentleyEcommerceApi.VendorsApi();
-let vendorID = new ProfBentleyEcommerceApi.ComponentsparametersvendorID(); // ComponentsparametersvendorID | 
+let apiInstance = new ProfessorBentleyElectronicsRetailApi.VendorsApi();
+let vendorid = new ProfessorBentleyElectronicsRetailApi.Vendorpropertiesvid(); // Vendorpropertiesvid | 
 
-apiInstance.getVendor(vendorID, (error, data, response) => {
+apiInstance.getVendor(vendorid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -119,7 +84,7 @@ apiInstance.getVendor(vendorID, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vendorID** | [**ComponentsparametersvendorID**](.md)|  | 
+ **vendorid** | [**Vendorpropertiesvid**](.md)|  | 
 
 ### Return type
 
@@ -127,83 +92,36 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basic](../README.md#basic)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="postVendor"></a>
-# **postVendor**
-> Vendor postVendor(opts)
-
-Post a new vendor record
-
-This operation creates a new vendor record
-
-### Example
-```javascript
-import {ProfBentleyEcommerceApi} from 'prof_bentley_ecommerce_api';
-
-let apiInstance = new ProfBentleyEcommerceApi.VendorsApi();
-let opts = { 
-  'body': new ProfBentleyEcommerceApi.Vendor(), // Vendor | vendor to add to system
-  'id': "38400000-8cf0-11bd-b23e-10b96e4ef00d", // String | 
-  'vendorName': "vendorName_example", // String | 
-  'email': "email_example", // String | 
-  'phoneNumber': "phoneNumber_example", // String | 
-  'address': new ProfBentleyEcommerceApi.Address() // Address | 
-};
-apiInstance.postVendor(opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**Vendor**](Vendor.md)| vendor to add to system | [optional] 
- **id** | [**String**](.md)|  | [optional] 
- **vendorName** | **String**|  | [optional] 
- **email** | **String**|  | [optional] 
- **phoneNumber** | **String**|  | [optional] 
- **address** | [**Address**](.md)|  | [optional] 
-
-### Return type
-
-[**Vendor**](Vendor.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/urlencoded, application/json, application/x-www-form-urlencoded
  - **Accept**: application/json
 
 <a name="updateVendor"></a>
 # **updateVendor**
-> [Product] updateVendor(vendorID)
+> Vendor updateVendor(vendorid, opts)
 
-Updates a vendor record
+update vendor record by id
 
-This operation updates a vendor record
+endpoint to update a single vendor record
 
 ### Example
 ```javascript
-import {ProfBentleyEcommerceApi} from 'prof_bentley_ecommerce_api';
+import {ProfessorBentleyElectronicsRetailApi} from 'professor_bentley_electronics_retail_api';
+let defaultClient = ProfessorBentleyElectronicsRetailApi.ApiClient.instance;
+// Configure HTTP basic authorization: basic
+let basic = defaultClient.authentications['basic'];
+basic.username = 'YOUR USERNAME';
+basic.password = 'YOUR PASSWORD';
 
-let apiInstance = new ProfBentleyEcommerceApi.VendorsApi();
-let vendorID = new ProfBentleyEcommerceApi.ComponentsparametersvendorID(); // ComponentsparametersvendorID | 
-
-apiInstance.updateVendor(vendorID, (error, data, response) => {
+let apiInstance = new ProfessorBentleyElectronicsRetailApi.VendorsApi();
+let vendorid = new ProfessorBentleyElectronicsRetailApi.Vendorpropertiesvid(); // Vendorpropertiesvid | 
+let opts = { 
+  'body': new ProfessorBentleyElectronicsRetailApi.Vendor() // Vendor | A new user order to add to the system
+};
+apiInstance.updateVendor(vendorid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -216,18 +134,19 @@ apiInstance.updateVendor(vendorID, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vendorID** | [**ComponentsparametersvendorID**](.md)|  | 
+ **vendorid** | [**Vendorpropertiesvid**](.md)|  | 
+ **body** | [**Vendor**](Vendor.md)| A new user order to add to the system | [optional] 
 
 ### Return type
 
-[**[Product]**](Product.md)
+[**Vendor**](Vendor.md)
 
 ### Authorization
 
-No authorization required
+[basic](../README.md#basic)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json, mulipart/formdata
  - **Accept**: application/json
 

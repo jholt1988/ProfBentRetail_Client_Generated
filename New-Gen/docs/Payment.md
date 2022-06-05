@@ -1,18 +1,17 @@
-# ProfBentleyEcommerceApi.Payment
+# ProfessorBentleyElectronicsRetailApi.Payment
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | [optional] 
-**orderID** | [**ComponentsparametersorderID**](ComponentsparametersorderID.md) |  | [optional] 
-**userID** | [**ComponentsparametersuserID**](ComponentsparametersuserID.md) |  | [optional] 
-**shippingMethod** | **String** |  | [optional] 
-**shippingCost** | **String** |  | [optional] 
-**total** | **String** |  | [optional] 
-**paymentMethod** | **String** |  | [optional] 
-**billingAddress** | [**Address**](Address.md) |  | [optional] 
-**billingShippingInfoSame** | **Boolean** |  | [optional] [default to false]
-**shippingAddress** | [**Address**](Address.md) |  | [optional] 
-**cardInfo** | [**PaymentCardInfo**](PaymentCardInfo.md) |  | [optional] 
-**estimatedDelivery** | **Date** |  | [optional] 
-**orderStatus** | **String** |  | [optional] 
+**payid** | **String** |  | [optional] 
+**method** | **String** |  | [optional] 
+**ccNumber** | **Number** |  | [optional] 
+**firstName** | **String** |  | [optional] 
+**lastName** | **String** |  | [optional] 
+**ccv** | **Number** |  | [optional] 
+**confirmationNumber** | **Number** |  | [optional] 
+**zipCode** | **Number** |  | [optional] 
+**oid** | **String** |  | [optional] 
+**statusid** | **Number** |  | [optional] 
+**updatedOn** | **Date** |  | [optional] 
+**createdOn** | **Date** |  | [optional] 

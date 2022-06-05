@@ -1,11 +1,12 @@
-# ProfBentleyEcommerceApi.Cart
+# ProfessorBentleyElectronicsRetailApi.Cart
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** |  | [optional] 
-**userID** | **String** |  | [optional] 
-**cartItems** | [**[CartCartItems]**](CartCartItems.md) |  | [optional] 
+**cid** | **String** |  | [optional] 
+**uid** | **String** |  | [optional] 
+**total** | **Number** |  | [optional] 
 **totalItems** | **Number** |  | [optional] 
-**addedDate** | **Date** |  | [optional] 
-**modifiedDate** | **Date** |  | [optional] 
+**isOrder** | **Boolean** |  | [optional] 
+**createdOn** | **Date** |  | [optional] 
+**updatedOn** | **Date** |  | [optional] 

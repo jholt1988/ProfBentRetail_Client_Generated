@@ -1,7 +1,7 @@
 {
-  "name": "prof_bentley_ecommerce_api",
+  "name": "professor_bentley_electronics_retail_api",
   "version": "1.5",
-  "description": "A_Ecommerce_API",
+  "description": "An_ecommerce_REST_API_for_a_retail_electronics_store__",
   "license": "Unlicense",
   "main": "src/index.js",
   "scripts": {

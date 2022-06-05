@@ -1,6 +1,6 @@
 /*
- * Prof Bentley Ecommerce API
- * A Ecommerce API
+ * Professor Bentley Electronics Retail API
+ * An ecommerce REST API for a retail electronics store. 
  *
  * OpenAPI spec version: 1.5
  * Contact: jordanh316@gmail.com
@@ -23,6 +23,7 @@ import {ApiClient} from '../ApiClient';
 export class Address {
   /**
    * Constructs a new <code>Address</code>.
+   * An address object used in multiple types of records
    * @alias module:model/Address
    * @class
    */
@@ -39,25 +40,38 @@ export class Address {
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new Address();
-      if (data.hasOwnProperty('lineOn'))
-        obj.lineOn = ApiClient.convertToType(data['lineOn'], 'String');
+      if (data.hasOwnProperty('addressid'))
+        obj.addressid = ApiClient.convertToType(data['addressid'], 'String');
+      if (data.hasOwnProperty('lineOne'))
+        obj.lineOne = ApiClient.convertToType(data['lineOne'], 'String');
       if (data.hasOwnProperty('lineTwo'))
         obj.lineTwo = ApiClient.convertToType(data['lineTwo'], 'String');
       if (data.hasOwnProperty('city'))
         obj.city = ApiClient.convertToType(data['city'], 'String');
       if (data.hasOwnProperty('state'))
         obj.state = ApiClient.convertToType(data['state'], 'String');
-      if (data.hasOwnProperty('postalCode'))
-        obj.postalCode = ApiClient.convertToType(data['postalCode'], 'String');
+      if (data.hasOwnProperty('zipCode'))
+        obj.zipCode = ApiClient.convertToType(data['zipCode'], 'Number');
+      if (data.hasOwnProperty('typeid'))
+        obj.typeid = ApiClient.convertToType(data['typeid'], 'Number');
+      if (data.hasOwnProperty('createdOn'))
+        obj.createdOn = ApiClient.convertToType(data['createdOn'], 'Date');
+      if (data.hasOwnProperty('updatedOn'))
+        obj.updatedOn = ApiClient.convertToType(data['updatedOn'], 'Date');
     }
     return obj;
   }
 }
 
 /**
- * @member {String} lineOn
+ * @member {String} addressid
  */
-Address.prototype.lineOn = undefined;
+Address.prototype.addressid = undefined;
+
+/**
+ * @member {String} lineOne
+ */
+Address.prototype.lineOne = undefined;
 
 /**
  * @member {String} lineTwo
@@ -75,7 +89,22 @@ Address.prototype.city = undefined;
 Address.prototype.state = undefined;
 
 /**
- * @member {String} postalCode
+ * @member {Number} zipCode
  */
-Address.prototype.postalCode = undefined;
+Address.prototype.zipCode = undefined;
+
+/**
+ * @member {Number} typeid
+ */
+Address.prototype.typeid = undefined;
+
+/**
+ * @member {Date} createdOn
+ */
+Address.prototype.createdOn = undefined;
+
+/**
+ * @member {Date} updatedOn
+ */
+Address.prototype.updatedOn = undefined;
 

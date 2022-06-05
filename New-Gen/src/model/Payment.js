@@ -1,6 +1,6 @@
 /*
- * Prof Bentley Ecommerce API
- * A Ecommerce API
+ * Professor Bentley Electronics Retail API
+ * An ecommerce REST API for a retail electronics store. 
  *
  * OpenAPI spec version: 1.5
  * Contact: jordanh316@gmail.com
@@ -14,10 +14,6 @@
  *
  */
 import {ApiClient} from '../ApiClient';
-import {Address} from './Address';
-import {ComponentsparametersorderID} from './ComponentsparametersorderID';
-import {ComponentsparametersuserID} from './ComponentsparametersuserID';
-import {PaymentCardInfo} from './PaymentCardInfo';
 
 /**
  * The Payment model module.
@@ -27,6 +23,7 @@ import {PaymentCardInfo} from './PaymentCardInfo';
 export class Payment {
   /**
    * Constructs a new <code>Payment</code>.
+   * A payment object to pay for order
    * @alias module:model/Payment
    * @class
    */
@@ -43,100 +40,92 @@ export class Payment {
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new Payment();
-      if (data.hasOwnProperty('id'))
-        obj.id = ApiClient.convertToType(data['id'], 'String');
-      if (data.hasOwnProperty('orderID'))
-        obj.orderID = ComponentsparametersorderID.constructFromObject(data['orderID']);
-      if (data.hasOwnProperty('userID'))
-        obj.userID = ComponentsparametersuserID.constructFromObject(data['userID']);
-      if (data.hasOwnProperty('shippingMethod'))
-        obj.shippingMethod = ApiClient.convertToType(data['shippingMethod'], 'String');
-      if (data.hasOwnProperty('shippingCost'))
-        obj.shippingCost = ApiClient.convertToType(data['shippingCost'], 'String');
-      if (data.hasOwnProperty('total'))
-        obj.total = ApiClient.convertToType(data['total'], 'String');
-      if (data.hasOwnProperty('paymentMethod'))
-        obj.paymentMethod = ApiClient.convertToType(data['paymentMethod'], 'String');
-      if (data.hasOwnProperty('billingAddress'))
-        obj.billingAddress = Address.constructFromObject(data['billingAddress']);
-      if (data.hasOwnProperty('billingShippingInfoSame'))
-        obj.billingShippingInfoSame = ApiClient.convertToType(data['billingShippingInfoSame'], 'Boolean');
-      if (data.hasOwnProperty('shippingAddress'))
-        obj.shippingAddress = Address.constructFromObject(data['shippingAddress']);
-      if (data.hasOwnProperty('cardInfo'))
-        obj.cardInfo = PaymentCardInfo.constructFromObject(data['cardInfo']);
-      if (data.hasOwnProperty('estimatedDelivery'))
-        obj.estimatedDelivery = ApiClient.convertToType(data['estimatedDelivery'], 'Date');
-      if (data.hasOwnProperty('orderStatus'))
-        obj.orderStatus = ApiClient.convertToType(data['orderStatus'], 'String');
+      if (data.hasOwnProperty('payid'))
+        obj.payid = ApiClient.convertToType(data['payid'], 'String');
+      if (data.hasOwnProperty('method'))
+        obj.method = ApiClient.convertToType(data['method'], 'String');
+      if (data.hasOwnProperty('ccNumber'))
+        obj.ccNumber = ApiClient.convertToType(data['ccNumber'], 'Number');
+      if (data.hasOwnProperty('firstName'))
+        obj.firstName = ApiClient.convertToType(data['firstName'], 'String');
+      if (data.hasOwnProperty('lastName'))
+        obj.lastName = ApiClient.convertToType(data['lastName'], 'String');
+      if (data.hasOwnProperty('ccv'))
+        obj.ccv = ApiClient.convertToType(data['ccv'], 'Number');
+      if (data.hasOwnProperty('confirmationNumber'))
+        obj.confirmationNumber = ApiClient.convertToType(data['confirmationNumber'], 'Number');
+      if (data.hasOwnProperty('zipCode'))
+        obj.zipCode = ApiClient.convertToType(data['zipCode'], 'Number');
+      if (data.hasOwnProperty('oid'))
+        obj.oid = ApiClient.convertToType(data['oid'], 'String');
+      if (data.hasOwnProperty('statusid'))
+        obj.statusid = ApiClient.convertToType(data['statusid'], 'Number');
+      if (data.hasOwnProperty('updatedOn'))
+        obj.updatedOn = ApiClient.convertToType(data['updatedOn'], 'Date');
+      if (data.hasOwnProperty('createdOn'))
+        obj.createdOn = ApiClient.convertToType(data['createdOn'], 'Date');
     }
     return obj;
   }
 }
 
 /**
- * @member {String} id
+ * @member {String} payid
  */
-Payment.prototype.id = undefined;
+Payment.prototype.payid = undefined;
 
 /**
- * @member {module:model/ComponentsparametersorderID} orderID
+ * @member {String} method
  */
-Payment.prototype.orderID = undefined;
+Payment.prototype.method = undefined;
 
 /**
- * @member {module:model/ComponentsparametersuserID} userID
+ * @member {Number} ccNumber
  */
-Payment.prototype.userID = undefined;
+Payment.prototype.ccNumber = undefined;
 
 /**
- * @member {String} shippingMethod
+ * @member {String} firstName
  */
-Payment.prototype.shippingMethod = undefined;
+Payment.prototype.firstName = undefined;
 
 /**
- * @member {String} shippingCost
+ * @member {String} lastName
  */
-Payment.prototype.shippingCost = undefined;
+Payment.prototype.lastName = undefined;
 
 /**
- * @member {String} total
+ * @member {Number} ccv
  */
-Payment.prototype.total = undefined;
+Payment.prototype.ccv = undefined;
 
 /**
- * @member {String} paymentMethod
+ * @member {Number} confirmationNumber
  */
-Payment.prototype.paymentMethod = undefined;
+Payment.prototype.confirmationNumber = undefined;
 
 /**
- * @member {module:model/Address} billingAddress
+ * @member {Number} zipCode
  */
-Payment.prototype.billingAddress = undefined;
+Payment.prototype.zipCode = undefined;
 
 /**
- * @member {Boolean} billingShippingInfoSame
- * @default false
+ * @member {String} oid
  */
-Payment.prototype.billingShippingInfoSame = false;
+Payment.prototype.oid = undefined;
 
 /**
- * @member {module:model/Address} shippingAddress
+ * @member {Number} statusid
  */
-Payment.prototype.shippingAddress = undefined;
+Payment.prototype.statusid = undefined;
 
 /**
- * @member {module:model/PaymentCardInfo} cardInfo
+ * @member {Date} updatedOn
  */
-Payment.prototype.cardInfo = undefined;
+Payment.prototype.updatedOn = undefined;
 
 /**
- * @member {Date} estimatedDelivery
+ * @member {Date} createdOn
  */
-Payment.prototype.estimatedDelivery = undefined;
-
-/**
- * @member {String} orderStatus
- */
-Payment.prototype.orderStatus = undefined;
+Payment.prototype.createdOn = undefined;
 

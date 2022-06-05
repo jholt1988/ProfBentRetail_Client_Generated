@@ -1,10 +1,14 @@
-# ProfBentleyEcommerceApi.Address
+# ProfessorBentleyElectronicsRetailApi.Address
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**lineOn** | **String** |  | [optional] 
+**addressid** | **String** |  | [optional] 
+**lineOne** | **String** |  | [optional] 
 **lineTwo** | **String** |  | [optional] 
 **city** | **String** |  | [optional] 
 **state** | **String** |  | [optional] 
-**postalCode** | **String** |  | [optional] 
+**zipCode** | **Number** |  | [optional] 
+**typeid** | **Number** |  | [optional] 
+**createdOn** | **Date** |  | [optional] 
+**updatedOn** | **Date** |  | [optional] 

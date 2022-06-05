@@ -1,6 +1,6 @@
 /*
- * Prof Bentley Ecommerce API
- * A Ecommerce API
+ * Professor Bentley Electronics Retail API
+ * An ecommerce REST API for a retail electronics store. 
  *
  * OpenAPI spec version: 1.5
  * Contact: jordanh316@gmail.com
@@ -22,9 +22,9 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ProfBentleyEcommerceApi);
+    factory(root.expect, root.ProfessorBentleyElectronicsRetailApi);
   }
-}(this, function(expect, ProfBentleyEcommerceApi) {
+}(this, function(expect, ProfessorBentleyElectronicsRetailApi) {
   'use strict';
 
   var instance;
@@ -32,12 +32,12 @@
   describe('(package)', function() {
     describe('ErrorModel', function() {
       beforeEach(function() {
-        instance = new ProfBentleyEcommerceApi.ErrorModel();
+        instance = new ProfessorBentleyElectronicsRetailApi.ErrorModel();
       });
 
       it('should create an instance of ErrorModel', function() {
         // TODO: update the code to test ErrorModel
-        expect(instance).to.be.a(ProfBentleyEcommerceApi.ErrorModel);
+        expect(instance).to.be.a(ProfessorBentleyElectronicsRetailApi.ErrorModel);
       });
 
       it('should have the property message (base name: "message")', function() {

@@ -1,6 +1,6 @@
 /*
- * Prof Bentley Ecommerce API
- * A Ecommerce API
+ * Professor Bentley Electronics Retail API
+ * An ecommerce REST API for a retail electronics store. 
  *
  * OpenAPI spec version: 1.5
  * Contact: jordanh316@gmail.com
@@ -14,7 +14,6 @@
  *
  */
 import {ApiClient} from '../ApiClient';
-import {CartCartItems} from './CartCartItems';
 
 /**
  * The Cart model module.
@@ -24,6 +23,7 @@ import {CartCartItems} from './CartCartItems';
 export class Cart {
   /**
    * Constructs a new <code>Cart</code>.
+   * user cart info
    * @alias module:model/Cart
    * @class
    */
@@ -40,37 +40,39 @@ export class Cart {
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new Cart();
-      if (data.hasOwnProperty('id'))
-        obj.id = ApiClient.convertToType(data['id'], 'Number');
-      if (data.hasOwnProperty('userID'))
-        obj.userID = ApiClient.convertToType(data['userID'], 'String');
-      if (data.hasOwnProperty('cartItems'))
-        obj.cartItems = ApiClient.convertToType(data['cartItems'], [CartCartItems]);
+      if (data.hasOwnProperty('cid'))
+        obj.cid = ApiClient.convertToType(data['cid'], 'String');
+      if (data.hasOwnProperty('uid'))
+        obj.uid = ApiClient.convertToType(data['uid'], 'String');
+      if (data.hasOwnProperty('total'))
+        obj.total = ApiClient.convertToType(data['total'], 'Number');
       if (data.hasOwnProperty('totalItems'))
         obj.totalItems = ApiClient.convertToType(data['totalItems'], 'Number');
-      if (data.hasOwnProperty('addedDate'))
-        obj.addedDate = ApiClient.convertToType(data['addedDate'], 'Date');
-      if (data.hasOwnProperty('modifiedDate'))
-        obj.modifiedDate = ApiClient.convertToType(data['modifiedDate'], 'Date');
+      if (data.hasOwnProperty('isOrder'))
+        obj.isOrder = ApiClient.convertToType(data['isOrder'], 'Boolean');
+      if (data.hasOwnProperty('createdOn'))
+        obj.createdOn = ApiClient.convertToType(data['createdOn'], 'Date');
+      if (data.hasOwnProperty('updatedOn'))
+        obj.updatedOn = ApiClient.convertToType(data['updatedOn'], 'Date');
     }
     return obj;
   }
 }
 
 /**
- * @member {Number} id
+ * @member {String} cid
  */
-Cart.prototype.id = undefined;
+Cart.prototype.cid = undefined;
 
 /**
- * @member {String} userID
+ * @member {String} uid
  */
-Cart.prototype.userID = undefined;
+Cart.prototype.uid = undefined;
 
 /**
- * @member {Array.<module:model/CartCartItems>} cartItems
+ * @member {Number} total
  */
-Cart.prototype.cartItems = undefined;
+Cart.prototype.total = undefined;
 
 /**
  * @member {Number} totalItems
@@ -78,12 +80,17 @@ Cart.prototype.cartItems = undefined;
 Cart.prototype.totalItems = undefined;
 
 /**
- * @member {Date} addedDate
+ * @member {Boolean} isOrder
  */
-Cart.prototype.addedDate = undefined;
+Cart.prototype.isOrder = undefined;
 
 /**
- * @member {Date} modifiedDate
+ * @member {Date} createdOn
  */
-Cart.prototype.modifiedDate = undefined;
+Cart.prototype.createdOn = undefined;
+
+/**
+ * @member {Date} updatedOn
+ */
+Cart.prototype.updatedOn = undefined;
 

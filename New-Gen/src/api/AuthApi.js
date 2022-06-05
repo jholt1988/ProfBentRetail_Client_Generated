@@ -1,6 +1,6 @@
 /*
- * Prof Bentley Ecommerce API
- * A Ecommerce API
+ * Professor Bentley Electronics Retail API
+ * An ecommerce REST API for a retail electronics store. 
  *
  * OpenAPI spec version: 1.5
  * Contact: jordanh316@gmail.com
@@ -14,6 +14,7 @@
  *
  */
 import {ApiClient} from "../ApiClient";
+import {InlineResponse404} from '../model/InlineResponse404';
 import {User} from '../model/User';
 
 /**
@@ -36,61 +37,64 @@ export class AuthApi {
     }
 
     /**
-     * Callback function to receive the result of the login operation.
-     * @callback moduleapi/AuthApi~loginCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Authorizes user 
-     * This operation authorizes user and creates a user session 
-     * @param {module:api/AuthApi~loginCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    login(callback) {
-      
-      let postBody = null;
-
-      let pathParams = {
-        
-      };
-      let queryParams = {
-        
-      };
-      let headerParams = {
-        
-      };
-      let formParams = {
-        
-      };
-
-      let authNames = [];
-      let contentTypes = [];
-      let accepts = [];
-      let returnType = null;
-
-      return this.apiClient.callApi(
-        '/api/auth/login', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-    /**
-     * Callback function to receive the result of the register operation.
-     * @callback moduleapi/AuthApi~registerCallback
+     * Callback function to receive the result of the registerNewUser operation.
+     * @callback moduleapi/AuthApi~registerNewUserCallback
      * @param {String} error Error message, if any.
      * @param {module:model/User{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Create new user object
-     * This operation post new user object with new data
-     * @param {module:api/AuthApi~registerCallback} callback The callback function, accepting three arguments: error, data, response
+     * registers a user into the systme
+     * creates a new user record
+     * @param {Object} opts Optional parameters
+     * @param {module:model/User} opts.body A new user record to add to the system
+     * @param {module:api/AuthApi~registerNewUserCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
-    register(callback) {
+    registerNewUser(opts, callback) {
+      opts = opts || {};
+      let postBody = opts['body'];
+
+      let pathParams = {
+        
+      };
+      let queryParams = {
+        
+      };
+      let headerParams = {
+        
+      };
+      let formParams = {
+        
+      };
+
+      let authNames = ['basic'];
+      let contentTypes = ['application/json', 'mulipart/formdata'];
+      let accepts = ['application/json'];
+      let returnType = User;
+
+      return this.apiClient.callApi(
+        '/auth/register', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+    /**
+     * Callback function to receive the result of the userLogin operation.
+     * @callback moduleapi/AuthApi~userLoginCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/User{ data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * authorizes user to use system
+     * login user into system
+     * @param {module:api/AuthApi~userLoginCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     */
+    userLogin(callback) {
       
       let postBody = null;
 
@@ -107,13 +111,13 @@ export class AuthApi {
         
       };
 
-      let authNames = [];
+      let authNames = ['basic'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = User;
 
       return this.apiClient.callApi(
-        '/api/auth/register', 'POST',
+        '/auth/login', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

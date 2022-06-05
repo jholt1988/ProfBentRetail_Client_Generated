@@ -1,6 +1,6 @@
 /*
- * Prof Bentley Ecommerce API
- * A Ecommerce API
+ * Professor Bentley Electronics Retail API
+ * An ecommerce REST API for a retail electronics store. 
  *
  * OpenAPI spec version: 1.5
  * Contact: jordanh316@gmail.com
@@ -14,6 +14,8 @@
  *
  */
 import {ApiClient} from '../ApiClient';
+import {Cart} from './Cart';
+import {CartItems} from './CartItems';
 
 /**
  * The InlineResponse200 model module.
@@ -39,29 +41,22 @@ export class InlineResponse200 {
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new InlineResponse200();
-      if (data.hasOwnProperty('recieptID'))
-        obj.recieptID = ApiClient.convertToType(data['recieptID'], 'String');
-      if (data.hasOwnProperty('total'))
-        obj.total = ApiClient.convertToType(data['total'], 'String');
-      if (data.hasOwnProperty('confirmationNumber'))
-        obj.confirmationNumber = ApiClient.convertToType(data['confirmationNumber'], 'String');
+      if (data.hasOwnProperty('cart'))
+        obj.cart = Cart.constructFromObject(data['cart']);
+      if (data.hasOwnProperty('cartItems'))
+        obj.cartItems = ApiClient.convertToType(data['cartItems'], [CartItems]);
     }
     return obj;
   }
 }
 
 /**
- * @member {String} recieptID
+ * @member {module:model/Cart} cart
  */
-InlineResponse200.prototype.recieptID = undefined;
+InlineResponse200.prototype.cart = undefined;
 
 /**
- * @member {String} total
+ * @member {Array.<module:model/CartItems>} cartItems
  */
-InlineResponse200.prototype.total = undefined;
-
-/**
- * @member {String} confirmationNumber
- */
-InlineResponse200.prototype.confirmationNumber = undefined;
+InlineResponse200.prototype.cartItems = undefined;
 

@@ -1,6 +1,6 @@
 /*
- * Prof Bentley Ecommerce API
- * A Ecommerce API
+ * Professor Bentley Electronics Retail API
+ * An ecommerce REST API for a retail electronics store. 
  *
  * OpenAPI spec version: 1.5
  * Contact: jordanh316@gmail.com
@@ -22,89 +22,25 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ProfBentleyEcommerceApi);
+    factory(root.expect, root.ProfessorBentleyElectronicsRetailApi);
   }
-}(this, function(expect, ProfBentleyEcommerceApi) {
+}(this, function(expect, ProfessorBentleyElectronicsRetailApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ProfBentleyEcommerceApi.OrdersApi();
+    instance = new ProfessorBentleyElectronicsRetailApi.OrdersApi();
   });
 
   describe('(package)', function() {
     describe('OrdersApi', function() {
-      describe('checkout', function() {
-        it('should call checkout successfully', function(done) {
-          // TODO: uncomment, update parameter values for checkout call and complete the assertions
-          /*
-
-          instance.checkout(userID, orderID, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
-            // TODO: update response assertions
-            expect(data).to.be.a(ProfBentleyEcommerceApi.InlineResponse200);
-
-            done();
-          });
-          */
-          // TODO: uncomment and complete method invocation above, then delete this line and the next:
-          done();
-        });
-      });
-      describe('deleteUserOrder', function() {
-        it('should call deleteUserOrder successfully', function(done) {
-          // TODO: uncomment, update parameter values for deleteUserOrder call
-          /*
-
-          instance.deleteUserOrder(userID, orderID, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
-
-            done();
-          });
-          */
-          // TODO: uncomment and complete method invocation above, then delete this line and the next:
-          done();
-        });
-      });
-      describe('getAllOrders', function() {
-        it('should call getAllOrders successfully', function(done) {
-          // TODO: uncomment getAllOrders call and complete the assertions
-          /*
-
-          instance.getAllOrders(function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
-            // TODO: update response assertions
-            let dataCtr = data;
-            expect(dataCtr).to.be.an(Array);
-            expect(dataCtr).to.not.be.empty();
-            for (let p in dataCtr) {
-              let data = dataCtr[p];
-              expect(data).to.be.a(ProfBentleyEcommerceApi.Product);
-            }
-
-            done();
-          });
-          */
-          // TODO: uncomment and complete method invocation above, then delete this line and the next:
-          done();
-        });
-      });
       describe('getAllUserOrders', function() {
         it('should call getAllUserOrders successfully', function(done) {
-          // TODO: uncomment, update parameter values for getAllUserOrders call and complete the assertions
+          // TODO: uncomment getAllUserOrders call and complete the assertions
           /*
 
-          instance.getAllUserOrders(userID, function(error, data, response) {
+          instance.getAllUserOrders(function(error, data, response) {
             if (error) {
               done(error);
               return;
@@ -115,7 +51,7 @@
             expect(dataCtr).to.not.be.empty();
             for (let p in dataCtr) {
               let data = dataCtr[p];
-              expect(data).to.be.a(ProfBentleyEcommerceApi.Order);
+              expect(data).to.be.a(ProfessorBentleyElectronicsRetailApi.Order);
             }
 
             done();
@@ -125,18 +61,18 @@
           done();
         });
       });
-      describe('postUserOrder', function() {
-        it('should call postUserOrder successfully', function(done) {
-          // TODO: uncomment, update parameter values for postUserOrder call and complete the assertions
+      describe('postNewOrder', function() {
+        it('should call postNewOrder successfully', function(done) {
+          // TODO: uncomment, update parameter values for postNewOrder call and complete the assertions
           /*
 
-          instance.postUserOrder(userID, function(error, data, response) {
+          instance.postNewOrder(orderid, function(error, data, response) {
             if (error) {
               done(error);
               return;
             }
             // TODO: update response assertions
-            expect(data).to.be.a(ProfBentleyEcommerceApi.Order);
+            expect(data).to.be.a(ProfessorBentleyElectronicsRetailApi.Order);
 
             done();
           });
@@ -145,24 +81,19 @@
           done();
         });
       });
-      describe('updateUserOrder', function() {
-        it('should call updateUserOrder successfully', function(done) {
-          // TODO: uncomment, update parameter values for updateUserOrder call and complete the assertions
+      describe('postPayment', function() {
+        it('should call postPayment successfully', function(done) {
+          // TODO: uncomment, update parameter values for postPayment call and complete the assertions
           /*
+          var opts = {};
 
-          instance.updateUserOrder(userID, orderID, function(error, data, response) {
+          instance.postPayment(orderid, opts, function(error, data, response) {
             if (error) {
               done(error);
               return;
             }
             // TODO: update response assertions
-            let dataCtr = data;
-            expect(dataCtr).to.be.an(Array);
-            expect(dataCtr).to.not.be.empty();
-            for (let p in dataCtr) {
-              let data = dataCtr[p];
-              expect(data).to.be.a(ProfBentleyEcommerceApi.Order);
-            }
+            expect(data).to.be.a(ProfessorBentleyElectronicsRetailApi.Payment);
 
             done();
           });

@@ -1,6 +1,6 @@
 /*
- * Prof Bentley Ecommerce API
- * A Ecommerce API
+ * Professor Bentley Electronics Retail API
+ * An ecommerce REST API for a retail electronics store. 
  *
  * OpenAPI spec version: 1.5
  * Contact: jordanh316@gmail.com
@@ -22,9 +22,9 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ProfBentleyEcommerceApi);
+    factory(root.expect, root.ProfessorBentleyElectronicsRetailApi);
   }
-}(this, function(expect, ProfBentleyEcommerceApi) {
+}(this, function(expect, ProfessorBentleyElectronicsRetailApi) {
   'use strict';
 
   var instance;
@@ -32,42 +32,18 @@
   describe('(package)', function() {
     describe('Order', function() {
       beforeEach(function() {
-        instance = new ProfBentleyEcommerceApi.Order();
+        instance = new ProfessorBentleyElectronicsRetailApi.Order();
       });
 
       it('should create an instance of Order', function() {
         // TODO: update the code to test Order
-        expect(instance).to.be.a(ProfBentleyEcommerceApi.Order);
+        expect(instance).to.be.a(ProfessorBentleyElectronicsRetailApi.Order);
       });
 
-      it('should have the property id (base name: "id")', function() {
-        // TODO: update the code to test the property id
-        expect(instance).to.have.property('id');
-        // expect(instance.id).to.be(expectedValueLiteral);
-      });
-
-      it('should have the property userID (base name: "userID")', function() {
-        // TODO: update the code to test the property userID
-        expect(instance).to.have.property('userID');
-        // expect(instance.userID).to.be(expectedValueLiteral);
-      });
-
-      it('should have the property ordersItems (base name: "ordersItems")', function() {
-        // TODO: update the code to test the property ordersItems
-        expect(instance).to.have.property('ordersItems');
-        // expect(instance.ordersItems).to.be(expectedValueLiteral);
-      });
-
-      it('should have the property totalItems (base name: "totalItems")', function() {
-        // TODO: update the code to test the property totalItems
-        expect(instance).to.have.property('totalItems');
-        // expect(instance.totalItems).to.be(expectedValueLiteral);
-      });
-
-      it('should have the property taxRate (base name: "taxRate")', function() {
-        // TODO: update the code to test the property taxRate
-        expect(instance).to.have.property('taxRate');
-        // expect(instance.taxRate).to.be(expectedValueLiteral);
+      it('should have the property oid (base name: "oid")', function() {
+        // TODO: update the code to test the property oid
+        expect(instance).to.have.property('oid');
+        // expect(instance.oid).to.be(expectedValueLiteral);
       });
 
       it('should have the property subtotal (base name: "subtotal")', function() {
@@ -76,22 +52,64 @@
         // expect(instance.subtotal).to.be(expectedValueLiteral);
       });
 
-      it('should have the property grandTotal (base name: "grandTotal")', function() {
-        // TODO: update the code to test the property grandTotal
-        expect(instance).to.have.property('grandTotal');
-        // expect(instance.grandTotal).to.be(expectedValueLiteral);
+      it('should have the property tax (base name: "tax")', function() {
+        // TODO: update the code to test the property tax
+        expect(instance).to.have.property('tax');
+        // expect(instance.tax).to.be(expectedValueLiteral);
       });
 
-      it('should have the property addedDate (base name: "addedDate")', function() {
-        // TODO: update the code to test the property addedDate
-        expect(instance).to.have.property('addedDate');
-        // expect(instance.addedDate).to.be(expectedValueLiteral);
+      it('should have the property total (base name: "total")', function() {
+        // TODO: update the code to test the property total
+        expect(instance).to.have.property('total');
+        // expect(instance.total).to.be(expectedValueLiteral);
       });
 
-      it('should have the property modifiedDate (base name: "modifiedDate")', function() {
-        // TODO: update the code to test the property modifiedDate
-        expect(instance).to.have.property('modifiedDate');
-        // expect(instance.modifiedDate).to.be(expectedValueLiteral);
+      it('should have the property itemsTotal (base name: "itemsTotal")', function() {
+        // TODO: update the code to test the property itemsTotal
+        expect(instance).to.have.property('itemsTotal');
+        // expect(instance.itemsTotal).to.be(expectedValueLiteral);
+      });
+
+      it('should have the property deliveryFee (base name: "deliveryFee")', function() {
+        // TODO: update the code to test the property deliveryFee
+        expect(instance).to.have.property('deliveryFee');
+        // expect(instance.deliveryFee).to.be(expectedValueLiteral);
+      });
+
+      it('should have the property deliveryId (base name: "deliveryId")', function() {
+        // TODO: update the code to test the property deliveryId
+        expect(instance).to.have.property('deliveryId');
+        // expect(instance.deliveryId).to.be(expectedValueLiteral);
+      });
+
+      it('should have the property payId (base name: "payId")', function() {
+        // TODO: update the code to test the property payId
+        expect(instance).to.have.property('payId');
+        // expect(instance.payId).to.be(expectedValueLiteral);
+      });
+
+      it('should have the property items (base name: "items")', function() {
+        // TODO: update the code to test the property items
+        expect(instance).to.have.property('items');
+        // expect(instance.items).to.be(expectedValueLiteral);
+      });
+
+      it('should have the property statusId (base name: "statusId")', function() {
+        // TODO: update the code to test the property statusId
+        expect(instance).to.have.property('statusId');
+        // expect(instance.statusId).to.be(expectedValueLiteral);
+      });
+
+      it('should have the property createdOn (base name: "createdOn")', function() {
+        // TODO: update the code to test the property createdOn
+        expect(instance).to.have.property('createdOn');
+        // expect(instance.createdOn).to.be(expectedValueLiteral);
+      });
+
+      it('should have the property updatedOn (base name: "updatedOn")', function() {
+        // TODO: update the code to test the property updatedOn
+        expect(instance).to.have.property('updatedOn');
+        // expect(instance.updatedOn).to.be(expectedValueLiteral);
       });
 
     });

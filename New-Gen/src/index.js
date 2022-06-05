@@ -1,6 +1,6 @@
 /*
- * Prof Bentley Ecommerce API
- * A Ecommerce API
+ * Professor Bentley Electronics Retail API
+ * An ecommerce REST API for a retail electronics store. 
  *
  * OpenAPI spec version: 1.5
  * Contact: jordanh316@gmail.com
@@ -16,42 +16,41 @@
 import {ApiClient} from './ApiClient';
 import {Address} from './model/Address';
 import {Cart} from './model/Cart';
-import {CartCartItems} from './model/CartCartItems';
+import {CartItems} from './model/CartItems';
+import {Category} from './model/Category';
+import {Delivery} from './model/Delivery';
 import {ErrorModel} from './model/ErrorModel';
 import {ExtendedErrorModel} from './model/ExtendedErrorModel';
 import {InlineResponse200} from './model/InlineResponse200';
-import {Invoice} from './model/Invoice';
-import {InvoiceItems} from './model/InvoiceItems';
+import {InlineResponse404} from './model/InlineResponse404';
+import {Method} from './model/Method';
 import {Order} from './model/Order';
-import {OrderOrdersItems} from './model/OrderOrdersItems';
+import {OrderItems} from './model/OrderItems';
 import {Payment} from './model/Payment';
-import {PaymentCardInfo} from './model/PaymentCardInfo';
 import {Product} from './model/Product';
+import {Status} from './model/Status';
+import {Type} from './model/Type';
 import {User} from './model/User';
+import {UserAddress} from './model/UserAddress';
 import {Vendor} from './model/Vendor';
 import {AuthApi} from './api/AuthApi';
 import {CartApi} from './api/CartApi';
-import {FilterApi} from './api/FilterApi';
-import {InventoryApi} from './api/InventoryApi';
-import {InvoicesApi} from './api/InvoicesApi';
-import {LoginApi} from './api/LoginApi';
+import {CheckoutApi} from './api/CheckoutApi';
 import {OrdersApi} from './api/OrdersApi';
 import {ProductsApi} from './api/ProductsApi';
-import {RegisterApi} from './api/RegisterApi';
-import {SearchApi} from './api/SearchApi';
 import {StoreApi} from './api/StoreApi';
 import {UsersApi} from './api/UsersApi';
 import {VendorsApi} from './api/VendorsApi';
 
 /**
-* A_Ecommerce_API.<br>
+* An_ecommerce_REST_API_for_a_retail_electronics_store__.<br>
 * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
 * <p>
 * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
 * <pre>
-* var ProfBentleyEcommerceApi = require('index'); // See note below*.
-* var xxxSvc = new ProfBentleyEcommerceApi.XxxApi(); // Allocate the API class we're going to use.
-* var yyyModel = new ProfBentleyEcommerceApi.Yyy(); // Construct a model instance.
+* var ProfessorBentleyElectronicsRetailApi = require('index'); // See note below*.
+* var xxxSvc = new ProfessorBentleyElectronicsRetailApi.XxxApi(); // Allocate the API class we're going to use.
+* var yyyModel = new ProfessorBentleyElectronicsRetailApi.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -63,8 +62,8 @@ import {VendorsApi} from './api/VendorsApi';
 * <p>
 * A non-AMD browser application (discouraged) might do something like this:
 * <pre>
-* var xxxSvc = new ProfBentleyEcommerceApi.XxxApi(); // Allocate the API class we're going to use.
-* var yyy = new ProfBentleyEcommerceApi.Yyy(); // Construct a model instance.
+* var xxxSvc = new ProfessorBentleyElectronicsRetailApi.XxxApi(); // Allocate the API class we're going to use.
+* var yyy = new ProfessorBentleyElectronicsRetailApi.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -94,10 +93,22 @@ export {
     Cart,
 
     /**
-     * The CartCartItems model constructor.
-     * @property {module:model/CartCartItems}
+     * The CartItems model constructor.
+     * @property {module:model/CartItems}
      */
-    CartCartItems,
+    CartItems,
+
+    /**
+     * The Category model constructor.
+     * @property {module:model/Category}
+     */
+    Category,
+
+    /**
+     * The Delivery model constructor.
+     * @property {module:model/Delivery}
+     */
+    Delivery,
 
     /**
      * The ErrorModel model constructor.
@@ -118,16 +129,16 @@ export {
     InlineResponse200,
 
     /**
-     * The Invoice model constructor.
-     * @property {module:model/Invoice}
+     * The InlineResponse404 model constructor.
+     * @property {module:model/InlineResponse404}
      */
-    Invoice,
+    InlineResponse404,
 
     /**
-     * The InvoiceItems model constructor.
-     * @property {module:model/InvoiceItems}
+     * The Method model constructor.
+     * @property {module:model/Method}
      */
-    InvoiceItems,
+    Method,
 
     /**
      * The Order model constructor.
@@ -136,10 +147,10 @@ export {
     Order,
 
     /**
-     * The OrderOrdersItems model constructor.
-     * @property {module:model/OrderOrdersItems}
+     * The OrderItems model constructor.
+     * @property {module:model/OrderItems}
      */
-    OrderOrdersItems,
+    OrderItems,
 
     /**
      * The Payment model constructor.
@@ -148,22 +159,34 @@ export {
     Payment,
 
     /**
-     * The PaymentCardInfo model constructor.
-     * @property {module:model/PaymentCardInfo}
-     */
-    PaymentCardInfo,
-
-    /**
      * The Product model constructor.
      * @property {module:model/Product}
      */
     Product,
 
     /**
+     * The Status model constructor.
+     * @property {module:model/Status}
+     */
+    Status,
+
+    /**
+     * The Type model constructor.
+     * @property {module:model/Type}
+     */
+    Type,
+
+    /**
      * The User model constructor.
      * @property {module:model/User}
      */
     User,
+
+    /**
+     * The UserAddress model constructor.
+     * @property {module:model/UserAddress}
+     */
+    UserAddress,
 
     /**
      * The Vendor model constructor.
@@ -184,28 +207,10 @@ export {
     CartApi,
 
     /**
-    * The FilterApi service constructor.
-    * @property {module:api/FilterApi}
+    * The CheckoutApi service constructor.
+    * @property {module:api/CheckoutApi}
     */
-    FilterApi,
-
-    /**
-    * The InventoryApi service constructor.
-    * @property {module:api/InventoryApi}
-    */
-    InventoryApi,
-
-    /**
-    * The InvoicesApi service constructor.
-    * @property {module:api/InvoicesApi}
-    */
-    InvoicesApi,
-
-    /**
-    * The LoginApi service constructor.
-    * @property {module:api/LoginApi}
-    */
-    LoginApi,
+    CheckoutApi,
 
     /**
     * The OrdersApi service constructor.
@@ -218,18 +223,6 @@ export {
     * @property {module:api/ProductsApi}
     */
     ProductsApi,
-
-    /**
-    * The RegisterApi service constructor.
-    * @property {module:api/RegisterApi}
-    */
-    RegisterApi,
-
-    /**
-    * The SearchApi service constructor.
-    * @property {module:api/SearchApi}
-    */
-    SearchApi,
 
     /**
     * The StoreApi service constructor.

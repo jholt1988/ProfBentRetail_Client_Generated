@@ -1,6 +1,6 @@
 /*
- * Prof Bentley Ecommerce API
- * A Ecommerce API
+ * Professor Bentley Electronics Retail API
+ * An ecommerce REST API for a retail electronics store. 
  *
  * OpenAPI spec version: 1.5
  * Contact: jordanh316@gmail.com
@@ -14,7 +14,7 @@
  *
  */
 import {ApiClient} from '../ApiClient';
-import {OrderOrdersItems} from './OrderOrdersItems';
+import {OrderItems} from './OrderItems';
 
 /**
  * The Order model module.
@@ -24,6 +24,7 @@ import {OrderOrdersItems} from './OrderOrdersItems';
 export class Order {
   /**
    * Constructs a new <code>Order</code>.
+   * user order record with all the details of an order
    * @alias module:model/Order
    * @class
    */
@@ -40,53 +41,39 @@ export class Order {
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new Order();
-      if (data.hasOwnProperty('id'))
-        obj.id = ApiClient.convertToType(data['id'], 'Number');
-      if (data.hasOwnProperty('userID'))
-        obj.userID = ApiClient.convertToType(data['userID'], 'String');
-      if (data.hasOwnProperty('ordersItems'))
-        obj.ordersItems = ApiClient.convertToType(data['ordersItems'], [OrderOrdersItems]);
-      if (data.hasOwnProperty('totalItems'))
-        obj.totalItems = ApiClient.convertToType(data['totalItems'], 'Number');
-      if (data.hasOwnProperty('taxRate'))
-        obj.taxRate = ApiClient.convertToType(data['taxRate'], 'Number');
+      if (data.hasOwnProperty('oid'))
+        obj.oid = ApiClient.convertToType(data['oid'], 'String');
       if (data.hasOwnProperty('subtotal'))
         obj.subtotal = ApiClient.convertToType(data['subtotal'], 'Number');
-      if (data.hasOwnProperty('grandTotal'))
-        obj.grandTotal = ApiClient.convertToType(data['grandTotal'], 'Number');
-      if (data.hasOwnProperty('addedDate'))
-        obj.addedDate = ApiClient.convertToType(data['addedDate'], 'Date');
-      if (data.hasOwnProperty('modifiedDate'))
-        obj.modifiedDate = ApiClient.convertToType(data['modifiedDate'], 'Date');
+      if (data.hasOwnProperty('tax'))
+        obj.tax = ApiClient.convertToType(data['tax'], 'Number');
+      if (data.hasOwnProperty('total'))
+        obj.total = ApiClient.convertToType(data['total'], 'Number');
+      if (data.hasOwnProperty('itemsTotal'))
+        obj.itemsTotal = ApiClient.convertToType(data['itemsTotal'], 'Number');
+      if (data.hasOwnProperty('deliveryFee'))
+        obj.deliveryFee = ApiClient.convertToType(data['deliveryFee'], 'Number');
+      if (data.hasOwnProperty('deliveryId'))
+        obj.deliveryId = ApiClient.convertToType(data['deliveryId'], 'String');
+      if (data.hasOwnProperty('payId'))
+        obj.payId = ApiClient.convertToType(data['payId'], 'String');
+      if (data.hasOwnProperty('items'))
+        obj.items = ApiClient.convertToType(data['items'], [OrderItems]);
+      if (data.hasOwnProperty('statusId'))
+        obj.statusId = ApiClient.convertToType(data['statusId'], 'Number');
+      if (data.hasOwnProperty('createdOn'))
+        obj.createdOn = ApiClient.convertToType(data['createdOn'], 'Date');
+      if (data.hasOwnProperty('updatedOn'))
+        obj.updatedOn = ApiClient.convertToType(data['updatedOn'], 'Date');
     }
     return obj;
   }
 }
 
 /**
- * @member {Number} id
+ * @member {String} oid
  */
-Order.prototype.id = undefined;
-
-/**
- * @member {String} userID
- */
-Order.prototype.userID = undefined;
-
-/**
- * @member {Array.<module:model/OrderOrdersItems>} ordersItems
- */
-Order.prototype.ordersItems = undefined;
-
-/**
- * @member {Number} totalItems
- */
-Order.prototype.totalItems = undefined;
-
-/**
- * @member {Number} taxRate
- */
-Order.prototype.taxRate = undefined;
+Order.prototype.oid = undefined;
 
 /**
  * @member {Number} subtotal
@@ -94,17 +81,52 @@ Order.prototype.taxRate = undefined;
 Order.prototype.subtotal = undefined;
 
 /**
- * @member {Number} grandTotal
+ * @member {Number} tax
  */
-Order.prototype.grandTotal = undefined;
+Order.prototype.tax = undefined;
 
 /**
- * @member {Date} addedDate
+ * @member {Number} total
  */
-Order.prototype.addedDate = undefined;
+Order.prototype.total = undefined;
 
 /**
- * @member {Date} modifiedDate
+ * @member {Number} itemsTotal
  */
-Order.prototype.modifiedDate = undefined;
+Order.prototype.itemsTotal = undefined;
+
+/**
+ * @member {Number} deliveryFee
+ */
+Order.prototype.deliveryFee = undefined;
+
+/**
+ * @member {String} deliveryId
+ */
+Order.prototype.deliveryId = undefined;
+
+/**
+ * @member {String} payId
+ */
+Order.prototype.payId = undefined;
+
+/**
+ * @member {Array.<module:model/OrderItems>} items
+ */
+Order.prototype.items = undefined;
+
+/**
+ * @member {Number} statusId
+ */
+Order.prototype.statusId = undefined;
+
+/**
+ * @member {Date} createdOn
+ */
+Order.prototype.createdOn = undefined;
+
+/**
+ * @member {Date} updatedOn
+ */
+Order.prototype.updatedOn = undefined;
 

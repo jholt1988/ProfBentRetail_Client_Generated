@@ -1,6 +1,6 @@
 /*
- * Prof Bentley Ecommerce API
- * A Ecommerce API
+ * Professor Bentley Electronics Retail API
+ * An ecommerce REST API for a retail electronics store. 
  *
  * OpenAPI spec version: 1.5
  * Contact: jordanh316@gmail.com
@@ -23,6 +23,7 @@ import {ApiClient} from '../ApiClient';
 export class Product {
   /**
    * Constructs a new <code>Product</code>.
+   * Product record with product info
    * @alias module:model/Product
    * @class
    */
@@ -39,26 +40,24 @@ export class Product {
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new Product();
-      if (data.hasOwnProperty('id'))
-        obj.id = ApiClient.convertToType(data['id'], 'String');
+      if (data.hasOwnProperty('pid'))
+        obj.pid = ApiClient.convertToType(data['pid'], 'String');
       if (data.hasOwnProperty('productName'))
         obj.productName = ApiClient.convertToType(data['productName'], 'String');
-      if (data.hasOwnProperty('price'))
-        obj.price = ApiClient.convertToType(data['price'], 'Number');
       if (data.hasOwnProperty('description'))
         obj.description = ApiClient.convertToType(data['description'], 'String');
-      if (data.hasOwnProperty('inventoryQuantity'))
-        obj.inventoryQuantity = ApiClient.convertToType(data['inventoryQuantity'], 'Number');
-      if (data.hasOwnProperty('category'))
-        obj.category = ApiClient.convertToType(data['category'], 'String');
-      if (data.hasOwnProperty('isFeatured'))
-        obj.isFeatured = ApiClient.convertToType(data['isFeatured'], 'Boolean');
-      if (data.hasOwnProperty('vendorId'))
-        obj.vendorId = ApiClient.convertToType(data['vendorId'], 'String');
+      if (data.hasOwnProperty('price'))
+        obj.price = ApiClient.convertToType(data['price'], 'Number');
+      if (data.hasOwnProperty('onHandQuantity'))
+        obj.onHandQuantity = ApiClient.convertToType(data['onHandQuantity'], 'Number');
+      if (data.hasOwnProperty('isFeature'))
+        obj.isFeature = ApiClient.convertToType(data['isFeature'], 'Boolean');
+      if (data.hasOwnProperty('catId'))
+        obj.catId = ApiClient.convertToType(data['catId'], 'Number');
       if (data.hasOwnProperty('image'))
-        obj.image = ApiClient.convertToType(data['image'], ['Blob']);
-      if (data.hasOwnProperty('unit'))
-        obj.unit = ApiClient.convertToType(data['unit'], 'String');
+        obj.image = ApiClient.convertToType(data['image'], 'Blob');
+      if (data.hasOwnProperty('vid'))
+        obj.vid = ApiClient.convertToType(data['vid'], 'String');
       if (data.hasOwnProperty('createdOn'))
         obj.createdOn = ApiClient.convertToType(data['createdOn'], 'Date');
       if (data.hasOwnProperty('updatedOn'))
@@ -69,9 +68,9 @@ export class Product {
 }
 
 /**
- * @member {String} id
+ * @member {String} pid
  */
-Product.prototype.id = undefined;
+Product.prototype.pid = undefined;
 
 /**
  * @member {String} productName
@@ -79,44 +78,39 @@ Product.prototype.id = undefined;
 Product.prototype.productName = undefined;
 
 /**
- * @member {Number} price
- */
-Product.prototype.price = undefined;
-
-/**
  * @member {String} description
  */
 Product.prototype.description = undefined;
 
 /**
- * @member {Number} inventoryQuantity
+ * @member {Number} price
  */
-Product.prototype.inventoryQuantity = undefined;
+Product.prototype.price = undefined;
 
 /**
- * @member {String} category
+ * @member {Number} onHandQuantity
  */
-Product.prototype.category = undefined;
+Product.prototype.onHandQuantity = undefined;
 
 /**
- * @member {Boolean} isFeatured
+ * @member {Boolean} isFeature
  */
-Product.prototype.isFeatured = undefined;
+Product.prototype.isFeature = undefined;
 
 /**
- * @member {String} vendorId
+ * @member {Number} catId
  */
-Product.prototype.vendorId = undefined;
+Product.prototype.catId = undefined;
 
 /**
- * @member {Array.<Blob>} image
+ * @member {Blob} image
  */
 Product.prototype.image = undefined;
 
 /**
- * @member {String} unit
+ * @member {String} vid
  */
-Product.prototype.unit = undefined;
+Product.prototype.vid = undefined;
 
 /**
  * @member {Date} createdOn

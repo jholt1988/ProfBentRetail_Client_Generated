@@ -1,6 +1,6 @@
 /*
- * Prof Bentley Ecommerce API
- * A Ecommerce API
+ * Professor Bentley Electronics Retail API
+ * An ecommerce REST API for a retail electronics store. 
  *
  * OpenAPI spec version: 1.5
  * Contact: jordanh316@gmail.com
@@ -15,8 +15,9 @@
  */
 import {ApiClient} from "../ApiClient";
 import {Cart} from '../model/Cart';
-import {ComponentsparametersuserID} from '../model/ComponentsparametersuserID';
-import {ExtendedErrorModel} from '../model/ExtendedErrorModel';
+import {Cartpropertiescid} from '../model/Cartpropertiescid';
+import {InlineResponse200} from '../model/InlineResponse200';
+import {InlineResponse404} from '../model/InlineResponse404';
 
 /**
 * Cart service.
@@ -38,30 +39,30 @@ export class CartApi {
     }
 
     /**
-     * Callback function to receive the result of the getUserCart operation.
-     * @callback moduleapi/CartApi~getUserCartCallback
+     * Callback function to receive the result of the addCartItems operation.
+     * @callback moduleapi/CartApi~addCartItemsCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/Cart{ data The data returned by the service call.
+     * @param {module:model/InlineResponse200{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * fetch user cart
-     * This operation retrieves user cart
-     * @param {module:model/ComponentsparametersuserID} userID 
-     * @param {module:api/CartApi~getUserCartCallback} callback The callback function, accepting three arguments: error, data, response
+     * Adds items to cart
+     * endpoint to add items user cart
+     * @param {module:model/Cartpropertiescid} cartid 
+     * @param {module:api/CartApi~addCartItemsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
-    getUserCart(userID, callback) {
+    addCartItems(cartid, callback) {
       
       let postBody = null;
-      // verify the required parameter 'userID' is set
-      if (userID === undefined || userID === null) {
-        throw new Error("Missing the required parameter 'userID' when calling getUserCart");
+      // verify the required parameter 'cartid' is set
+      if (cartid === undefined || cartid === null) {
+        throw new Error("Missing the required parameter 'cartid' when calling addCartItems");
       }
 
       let pathParams = {
-        'userID': userID
+        'cartid': cartid
       };
       let queryParams = {
         
@@ -73,42 +74,37 @@ export class CartApi {
         
       };
 
-      let authNames = [];
+      let authNames = ['basic'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Cart;
+      let returnType = InlineResponse200;
 
       return this.apiClient.callApi(
-        '/api/user/cart/{userID}', 'GET',
+        '/cart/{cartid}', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
     /**
-     * Callback function to receive the result of the updateUserCart operation.
-     * @callback moduleapi/CartApi~updateUserCartCallback
+     * Callback function to receive the result of the postNewCart operation.
+     * @callback moduleapi/CartApi~postNewCartCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Cart{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Update user cart record
-     * This operation updates user cart matching user ID
-     * @param {module:model/ComponentsparametersuserID} userID 
-     * @param {module:api/CartApi~updateUserCartCallback} callback The callback function, accepting three arguments: error, data, response
+     * creates a new user cart
+     * endpoint to create a new user cart records
+     * @param {module:api/CartApi~postNewCartCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
-    updateUserCart(userID, callback) {
+    postNewCart(callback) {
       
       let postBody = null;
-      // verify the required parameter 'userID' is set
-      if (userID === undefined || userID === null) {
-        throw new Error("Missing the required parameter 'userID' when calling updateUserCart");
-      }
 
       let pathParams = {
-        'userID': userID
+        
       };
       let queryParams = {
         
@@ -120,13 +116,60 @@ export class CartApi {
         
       };
 
-      let authNames = [];
+      let authNames = ['basic'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Cart;
 
       return this.apiClient.callApi(
-        '/api/user/{userID}/edit/cart', 'PUT',
+        '/cart', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+    /**
+     * Callback function to receive the result of the updateCartItems operation.
+     * @callback moduleapi/CartApi~updateCartItemsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse200{ data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * update user cart by id
+     * endpoint to update a user cart record
+     * @param {module:model/Cartpropertiescid} cartid 
+     * @param {module:api/CartApi~updateCartItemsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     */
+    updateCartItems(cartid, callback) {
+      
+      let postBody = null;
+      // verify the required parameter 'cartid' is set
+      if (cartid === undefined || cartid === null) {
+        throw new Error("Missing the required parameter 'cartid' when calling updateCartItems");
+      }
+
+      let pathParams = {
+        'cartid': cartid
+      };
+      let queryParams = {
+        
+      };
+      let headerParams = {
+        
+      };
+      let formParams = {
+        
+      };
+
+      let authNames = ['basic'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse200;
+
+      return this.apiClient.callApi(
+        '/cart/{cartid}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

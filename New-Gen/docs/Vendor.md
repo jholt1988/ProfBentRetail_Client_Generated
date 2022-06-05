@@ -1,10 +1,11 @@
-# ProfBentleyEcommerceApi.Vendor
+# ProfessorBentleyElectronicsRetailApi.Vendor
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | [optional] 
+**vid** | **String** |  | [optional] 
 **vendorName** | **String** |  | [optional] 
-**email** | **String** |  | [optional] 
 **phoneNumber** | **String** |  | [optional] 
-**address** | [**Address**](Address.md) |  | [optional] 
+**email** | **String** |  | [optional] 
+**createdOn** | **Date** |  | [optional] 
+**updatedOn** | **Date** |  | [optional] 

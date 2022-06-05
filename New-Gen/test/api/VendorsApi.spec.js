@@ -1,6 +1,6 @@
 /*
- * Prof Bentley Ecommerce API
- * A Ecommerce API
+ * Professor Bentley Electronics Retail API
+ * An ecommerce REST API for a retail electronics store. 
  *
  * OpenAPI spec version: 1.5
  * Contact: jordanh316@gmail.com
@@ -22,43 +22,25 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ProfBentleyEcommerceApi);
+    factory(root.expect, root.ProfessorBentleyElectronicsRetailApi);
   }
-}(this, function(expect, ProfBentleyEcommerceApi) {
+}(this, function(expect, ProfessorBentleyElectronicsRetailApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ProfBentleyEcommerceApi.VendorsApi();
+    instance = new ProfessorBentleyElectronicsRetailApi.VendorsApi();
   });
 
   describe('(package)', function() {
     describe('VendorsApi', function() {
-      describe('deleteVendor', function() {
-        it('should call deleteVendor successfully', function(done) {
-          // TODO: uncomment, update parameter values for deleteVendor call
+      describe('getAllvendors', function() {
+        it('should call getAllvendors successfully', function(done) {
+          // TODO: uncomment getAllvendors call and complete the assertions
           /*
 
-          instance.deleteVendor(vendorID, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
-
-            done();
-          });
-          */
-          // TODO: uncomment and complete method invocation above, then delete this line and the next:
-          done();
-        });
-      });
-      describe('getAllVendors', function() {
-        it('should call getAllVendors successfully', function(done) {
-          // TODO: uncomment getAllVendors call and complete the assertions
-          /*
-
-          instance.getAllVendors(function(error, data, response) {
+          instance.getAllvendors(function(error, data, response) {
             if (error) {
               done(error);
               return;
@@ -69,7 +51,7 @@
             expect(dataCtr).to.not.be.empty();
             for (let p in dataCtr) {
               let data = dataCtr[p];
-              expect(data).to.be.a(ProfBentleyEcommerceApi.Vendor);
+              expect(data).to.be.a(ProfessorBentleyElectronicsRetailApi.Vendor);
             }
 
             done();
@@ -84,34 +66,13 @@
           // TODO: uncomment, update parameter values for getVendor call and complete the assertions
           /*
 
-          instance.getVendor(vendorID, function(error, data, response) {
+          instance.getVendor(vendorid, function(error, data, response) {
             if (error) {
               done(error);
               return;
             }
             // TODO: update response assertions
-            expect(data).to.be.a(ProfBentleyEcommerceApi.Vendor);
-
-            done();
-          });
-          */
-          // TODO: uncomment and complete method invocation above, then delete this line and the next:
-          done();
-        });
-      });
-      describe('postVendor', function() {
-        it('should call postVendor successfully', function(done) {
-          // TODO: uncomment, update parameter values for postVendor call and complete the assertions
-          /*
-          var opts = {};
-
-          instance.postVendor(opts, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
-            // TODO: update response assertions
-            expect(data).to.be.a(ProfBentleyEcommerceApi.Vendor);
+            expect(data).to.be.a(ProfessorBentleyElectronicsRetailApi.Vendor);
 
             done();
           });
@@ -124,20 +85,15 @@
         it('should call updateVendor successfully', function(done) {
           // TODO: uncomment, update parameter values for updateVendor call and complete the assertions
           /*
+          var opts = {};
 
-          instance.updateVendor(vendorID, function(error, data, response) {
+          instance.updateVendor(vendorid, opts, function(error, data, response) {
             if (error) {
               done(error);
               return;
             }
             // TODO: update response assertions
-            let dataCtr = data;
-            expect(dataCtr).to.be.an(Array);
-            expect(dataCtr).to.not.be.empty();
-            for (let p in dataCtr) {
-              let data = dataCtr[p];
-              expect(data).to.be.a(ProfBentleyEcommerceApi.Product);
-            }
+            expect(data).to.be.a(ProfessorBentleyElectronicsRetailApi.Vendor);
 
             done();
           });

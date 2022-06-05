@@ -1,8 +1,7 @@
-# ProfBentleyEcommerceApi.InlineResponse200
+# ProfessorBentleyElectronicsRetailApi.InlineResponse200
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**recieptID** | **String** |  | [optional] 
-**total** | **String** |  | [optional] 
-**confirmationNumber** | **String** |  | [optional] 
+**cart** | [**Cart**](Cart.md) |  | [optional] 
+**cartItems** | [**[CartItems]**](CartItems.md) |  | [optional] 

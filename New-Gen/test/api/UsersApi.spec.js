@@ -1,6 +1,6 @@
 /*
- * Prof Bentley Ecommerce API
- * A Ecommerce API
+ * Professor Bentley Electronics Retail API
+ * An ecommerce REST API for a retail electronics store. 
  *
  * OpenAPI spec version: 1.5
  * Contact: jordanh316@gmail.com
@@ -22,101 +22,19 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ProfBentleyEcommerceApi);
+    factory(root.expect, root.ProfessorBentleyElectronicsRetailApi);
   }
-}(this, function(expect, ProfBentleyEcommerceApi) {
+}(this, function(expect, ProfessorBentleyElectronicsRetailApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ProfBentleyEcommerceApi.UsersApi();
+    instance = new ProfessorBentleyElectronicsRetailApi.UsersApi();
   });
 
   describe('(package)', function() {
     describe('UsersApi', function() {
-      describe('checkout', function() {
-        it('should call checkout successfully', function(done) {
-          // TODO: uncomment, update parameter values for checkout call and complete the assertions
-          /*
-
-          instance.checkout(userID, orderID, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
-            // TODO: update response assertions
-            expect(data).to.be.a(ProfBentleyEcommerceApi.InlineResponse200);
-
-            done();
-          });
-          */
-          // TODO: uncomment and complete method invocation above, then delete this line and the next:
-          done();
-        });
-      });
-      describe('deleteUser', function() {
-        it('should call deleteUser successfully', function(done) {
-          // TODO: uncomment, update parameter values for deleteUser call
-          /*
-
-          instance.deleteUser(userID, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
-
-            done();
-          });
-          */
-          // TODO: uncomment and complete method invocation above, then delete this line and the next:
-          done();
-        });
-      });
-      describe('deleteUserOrder', function() {
-        it('should call deleteUserOrder successfully', function(done) {
-          // TODO: uncomment, update parameter values for deleteUserOrder call
-          /*
-
-          instance.deleteUserOrder(userID, orderID, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
-
-            done();
-          });
-          */
-          // TODO: uncomment and complete method invocation above, then delete this line and the next:
-          done();
-        });
-      });
-      describe('getAllUserOrders', function() {
-        it('should call getAllUserOrders successfully', function(done) {
-          // TODO: uncomment, update parameter values for getAllUserOrders call and complete the assertions
-          /*
-
-          instance.getAllUserOrders(userID, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
-            // TODO: update response assertions
-            let dataCtr = data;
-            expect(dataCtr).to.be.an(Array);
-            expect(dataCtr).to.not.be.empty();
-            for (let p in dataCtr) {
-              let data = dataCtr[p];
-              expect(data).to.be.a(ProfBentleyEcommerceApi.Order);
-            }
-
-            done();
-          });
-          */
-          // TODO: uncomment and complete method invocation above, then delete this line and the next:
-          done();
-        });
-      });
       describe('getAllUsers', function() {
         it('should call getAllUsers successfully', function(done) {
           // TODO: uncomment getAllUsers call and complete the assertions
@@ -133,7 +51,7 @@
             expect(dataCtr).to.not.be.empty();
             for (let p in dataCtr) {
               let data = dataCtr[p];
-              expect(data).to.be.a(ProfBentleyEcommerceApi.User);
+              expect(data).to.be.a(ProfessorBentleyElectronicsRetailApi.User);
             }
 
             done();
@@ -148,53 +66,13 @@
           // TODO: uncomment, update parameter values for getUser call and complete the assertions
           /*
 
-          instance.getUser(userID, function(error, data, response) {
+          instance.getUser(userid, function(error, data, response) {
             if (error) {
               done(error);
               return;
             }
             // TODO: update response assertions
-            expect(data).to.be.a(ProfBentleyEcommerceApi.User);
-
-            done();
-          });
-          */
-          // TODO: uncomment and complete method invocation above, then delete this line and the next:
-          done();
-        });
-      });
-      describe('getUserCart', function() {
-        it('should call getUserCart successfully', function(done) {
-          // TODO: uncomment, update parameter values for getUserCart call and complete the assertions
-          /*
-
-          instance.getUserCart(userID, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
-            // TODO: update response assertions
-            expect(data).to.be.a(ProfBentleyEcommerceApi.Cart);
-
-            done();
-          });
-          */
-          // TODO: uncomment and complete method invocation above, then delete this line and the next:
-          done();
-        });
-      });
-      describe('postUserOrder', function() {
-        it('should call postUserOrder successfully', function(done) {
-          // TODO: uncomment, update parameter values for postUserOrder call and complete the assertions
-          /*
-
-          instance.postUserOrder(userID, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
-            // TODO: update response assertions
-            expect(data).to.be.a(ProfBentleyEcommerceApi.Order);
+            expect(data).to.be.a(ProfessorBentleyElectronicsRetailApi.User);
 
             done();
           });
@@ -208,59 +86,13 @@
           // TODO: uncomment, update parameter values for updateUser call and complete the assertions
           /*
 
-          instance.updateUser(userID, function(error, data, response) {
+          instance.updateUser(userid, function(error, data, response) {
             if (error) {
               done(error);
               return;
             }
             // TODO: update response assertions
-            expect(data).to.be.a(ProfBentleyEcommerceApi.User);
-
-            done();
-          });
-          */
-          // TODO: uncomment and complete method invocation above, then delete this line and the next:
-          done();
-        });
-      });
-      describe('updateUserCart', function() {
-        it('should call updateUserCart successfully', function(done) {
-          // TODO: uncomment, update parameter values for updateUserCart call and complete the assertions
-          /*
-
-          instance.updateUserCart(userID, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
-            // TODO: update response assertions
-            expect(data).to.be.a(ProfBentleyEcommerceApi.Cart);
-
-            done();
-          });
-          */
-          // TODO: uncomment and complete method invocation above, then delete this line and the next:
-          done();
-        });
-      });
-      describe('updateUserOrder', function() {
-        it('should call updateUserOrder successfully', function(done) {
-          // TODO: uncomment, update parameter values for updateUserOrder call and complete the assertions
-          /*
-
-          instance.updateUserOrder(userID, orderID, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
-            // TODO: update response assertions
-            let dataCtr = data;
-            expect(dataCtr).to.be.an(Array);
-            expect(dataCtr).to.not.be.empty();
-            for (let p in dataCtr) {
-              let data = dataCtr[p];
-              expect(data).to.be.a(ProfBentleyEcommerceApi.Order);
-            }
+            expect(data).to.be.a(ProfessorBentleyElectronicsRetailApi.User);
 
             done();
           });

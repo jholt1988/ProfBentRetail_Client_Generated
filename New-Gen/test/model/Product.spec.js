@@ -1,6 +1,6 @@
 /*
- * Prof Bentley Ecommerce API
- * A Ecommerce API
+ * Professor Bentley Electronics Retail API
+ * An ecommerce REST API for a retail electronics store. 
  *
  * OpenAPI spec version: 1.5
  * Contact: jordanh316@gmail.com
@@ -22,9 +22,9 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ProfBentleyEcommerceApi);
+    factory(root.expect, root.ProfessorBentleyElectronicsRetailApi);
   }
-}(this, function(expect, ProfBentleyEcommerceApi) {
+}(this, function(expect, ProfessorBentleyElectronicsRetailApi) {
   'use strict';
 
   var instance;
@@ -32,18 +32,18 @@
   describe('(package)', function() {
     describe('Product', function() {
       beforeEach(function() {
-        instance = new ProfBentleyEcommerceApi.Product();
+        instance = new ProfessorBentleyElectronicsRetailApi.Product();
       });
 
       it('should create an instance of Product', function() {
         // TODO: update the code to test Product
-        expect(instance).to.be.a(ProfBentleyEcommerceApi.Product);
+        expect(instance).to.be.a(ProfessorBentleyElectronicsRetailApi.Product);
       });
 
-      it('should have the property id (base name: "id")', function() {
-        // TODO: update the code to test the property id
-        expect(instance).to.have.property('id');
-        // expect(instance.id).to.be(expectedValueLiteral);
+      it('should have the property pid (base name: "pid")', function() {
+        // TODO: update the code to test the property pid
+        expect(instance).to.have.property('pid');
+        // expect(instance.pid).to.be(expectedValueLiteral);
       });
 
       it('should have the property productName (base name: "productName")', function() {
@@ -52,40 +52,34 @@
         // expect(instance.productName).to.be(expectedValueLiteral);
       });
 
-      it('should have the property price (base name: "price")', function() {
-        // TODO: update the code to test the property price
-        expect(instance).to.have.property('price');
-        // expect(instance.price).to.be(expectedValueLiteral);
-      });
-
       it('should have the property description (base name: "description")', function() {
         // TODO: update the code to test the property description
         expect(instance).to.have.property('description');
         // expect(instance.description).to.be(expectedValueLiteral);
       });
 
-      it('should have the property inventoryQuantity (base name: "inventoryQuantity")', function() {
-        // TODO: update the code to test the property inventoryQuantity
-        expect(instance).to.have.property('inventoryQuantity');
-        // expect(instance.inventoryQuantity).to.be(expectedValueLiteral);
+      it('should have the property price (base name: "price")', function() {
+        // TODO: update the code to test the property price
+        expect(instance).to.have.property('price');
+        // expect(instance.price).to.be(expectedValueLiteral);
       });
 
-      it('should have the property category (base name: "category")', function() {
-        // TODO: update the code to test the property category
-        expect(instance).to.have.property('category');
-        // expect(instance.category).to.be(expectedValueLiteral);
+      it('should have the property onHandQuantity (base name: "onHandQuantity")', function() {
+        // TODO: update the code to test the property onHandQuantity
+        expect(instance).to.have.property('onHandQuantity');
+        // expect(instance.onHandQuantity).to.be(expectedValueLiteral);
       });
 
-      it('should have the property isFeatured (base name: "isFeatured")', function() {
-        // TODO: update the code to test the property isFeatured
-        expect(instance).to.have.property('isFeatured');
-        // expect(instance.isFeatured).to.be(expectedValueLiteral);
+      it('should have the property isFeature (base name: "isFeature")', function() {
+        // TODO: update the code to test the property isFeature
+        expect(instance).to.have.property('isFeature');
+        // expect(instance.isFeature).to.be(expectedValueLiteral);
       });
 
-      it('should have the property vendorId (base name: "vendorId")', function() {
-        // TODO: update the code to test the property vendorId
-        expect(instance).to.have.property('vendorId');
-        // expect(instance.vendorId).to.be(expectedValueLiteral);
+      it('should have the property catId (base name: "catId")', function() {
+        // TODO: update the code to test the property catId
+        expect(instance).to.have.property('catId');
+        // expect(instance.catId).to.be(expectedValueLiteral);
       });
 
       it('should have the property image (base name: "image")', function() {
@@ -94,10 +88,10 @@
         // expect(instance.image).to.be(expectedValueLiteral);
       });
 
-      it('should have the property unit (base name: "unit")', function() {
-        // TODO: update the code to test the property unit
-        expect(instance).to.have.property('unit');
-        // expect(instance.unit).to.be(expectedValueLiteral);
+      it('should have the property vid (base name: "vid")', function() {
+        // TODO: update the code to test the property vid
+        expect(instance).to.have.property('vid');
+        // expect(instance.vid).to.be(expectedValueLiteral);
       });
 
       it('should have the property createdOn (base name: "createdOn")', function() {

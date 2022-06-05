@@ -1,6 +1,6 @@
 /*
- * Prof Bentley Ecommerce API
- * A Ecommerce API
+ * Professor Bentley Electronics Retail API
+ * An ecommerce REST API for a retail electronics store. 
  *
  * OpenAPI spec version: 1.5
  * Contact: jordanh316@gmail.com
@@ -14,11 +14,10 @@
  *
  */
 import {ApiClient} from "../ApiClient";
-import {Cart} from '../model/Cart';
-import {ComponentsparametersproductID} from '../model/ComponentsparametersproductID';
-import {Componentsparameterssearchterm} from '../model/Componentsparameterssearchterm';
-import {ExtendedErrorModel} from '../model/ExtendedErrorModel';
+import {InlineResponse404} from '../model/InlineResponse404';
 import {Product} from '../model/Product';
+import {Productpropertiespid} from '../model/Productpropertiespid';
+import {User} from '../model/User';
 
 /**
 * Products service.
@@ -40,107 +39,20 @@ export class ProductsApi {
     }
 
     /**
-     * Callback function to receive the result of the deleteProduct operation.
-     * @callback moduleapi/ProductsApi~deleteProductCallback
+     * Callback function to receive the result of the getAllproducts operation.
+     * @callback moduleapi/ProductsApi~getAllproductsCallback
      * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
+     * @param {Array.<module:model/Product>{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Delete product record
-     * This operation deletes a product record
-     * @param {module:model/ComponentsparametersproductID} productID 
-     * @param {module:api/ProductsApi~deleteProductCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    deleteProduct(productID, callback) {
-      
-      let postBody = null;
-      // verify the required parameter 'productID' is set
-      if (productID === undefined || productID === null) {
-        throw new Error("Missing the required parameter 'productID' when calling deleteProduct");
-      }
-
-      let pathParams = {
-        'productID': productID
-      };
-      let queryParams = {
-        
-      };
-      let headerParams = {
-        
-      };
-      let formParams = {
-        
-      };
-
-      let authNames = [];
-      let contentTypes = [];
-      let accepts = [];
-      let returnType = null;
-
-      return this.apiClient.callApi(
-        '/api/store/products/delete/{productID}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-    /**
-     * Callback function to receive the result of the filterProducts operation.
-     * @callback moduleapi/ProductsApi~filterProductsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get filtered product data
-     * This operations gets filtered product data
-     * @param {module:api/ProductsApi~filterProductsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    filterProducts(callback) {
-      
-      let postBody = null;
-
-      let pathParams = {
-        
-      };
-      let queryParams = {
-        
-      };
-      let headerParams = {
-        
-      };
-      let formParams = {
-        
-      };
-
-      let authNames = [];
-      let contentTypes = [];
-      let accepts = [];
-      let returnType = null;
-
-      return this.apiClient.callApi(
-        '/api/store/products/', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-    /**
-     * Callback function to receive the result of the getAllProducts operation.
-     * @callback moduleapi/ProductsApi~getAllProductsCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Cart>{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get all products
-     * This operation retrieves all products data
-     * @param {module:api/ProductsApi~getAllProductsCallback} callback The callback function, accepting three arguments: error, data, response
+     * fetchs all product records
+     * endpoint to get an array of all product records
+     * @param {module:api/ProductsApi~getAllproductsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
-    getAllProducts(callback) {
+    getAllproducts(callback) {
       
       let postBody = null;
 
@@ -157,13 +69,13 @@ export class ProductsApi {
         
       };
 
-      let authNames = [];
+      let authNames = ['basic'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [Cart];
+      let returnType = [Product];
 
       return this.apiClient.callApi(
-        '/api/store/products', 'GET',
+        '/store/products', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -177,22 +89,22 @@ export class ProductsApi {
      */
 
     /**
-     * Get product record
-     * This operation retrieves a product record with matching id
-     * @param {module:model/ComponentsparametersproductID} productID 
+     * get user record by id
+     * endpoint to get a single user record
+     * @param {module:model/Productpropertiespid} productid 
      * @param {module:api/ProductsApi~getProductCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
-    getProduct(productID, callback) {
+    getProduct(productid, callback) {
       
       let postBody = null;
-      // verify the required parameter 'productID' is set
-      if (productID === undefined || productID === null) {
-        throw new Error("Missing the required parameter 'productID' when calling getProduct");
+      // verify the required parameter 'productid' is set
+      if (productid === undefined || productid === null) {
+        throw new Error("Missing the required parameter 'productid' when calling getProduct");
       }
 
       let pathParams = {
-        'productID': productID
+        'productid': productid
       };
       let queryParams = {
         
@@ -204,120 +116,13 @@ export class ProductsApi {
         
       };
 
-      let authNames = [];
+      let authNames = ['basic'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Product;
 
       return this.apiClient.callApi(
-        '/api/store/products/{productID}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-    /**
-     * Callback function to receive the result of the postProduct operation.
-     * @callback moduleapi/ProductsApi~postProductCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Product{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Create a new product record
-     * This operation creates a new product record
-     * @param {Object} opts Optional parameters
-     * @param {module:model/Product} opts.body product to add to system
-     * @param {String} opts.id 
-     * @param {String} opts.productName 
-     * @param {Number} opts.price 
-     * @param {String} opts.description 
-     * @param {Number} opts.inventoryQuantity 
-     * @param {String} opts.category 
-     * @param {Boolean} opts.isFeatured 
-     * @param {String} opts.vendorId 
-     * @param {Array.<Blob>} opts.image 
-     * @param {String} opts.unit 
-     * @param {Date} opts.createdOn 
-     * @param {Date} opts.updatedOn 
-     * @param {module:api/ProductsApi~postProductCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
-     */
-    postProduct(opts, callback) {
-      opts = opts || {};
-      let postBody = opts['body'];
-
-      let pathParams = {
-        
-      };
-      let queryParams = {
-        
-      };
-      let headerParams = {
-        
-      };
-      let formParams = {
-        'id': opts['id'],'productName': opts['productName'],'price': opts['price'],'description': opts['description'],'inventoryQuantity': opts['inventoryQuantity'],'category': opts['category'],'isFeatured': opts['isFeatured'],'vendorId': opts['vendorId'],'image': this.apiClient.buildCollectionParam(opts['image'], 'multi'),'unit': opts['unit'],'createdOn': opts['createdOn'],'updatedOn': opts['updatedOn']
-      };
-
-      let authNames = [];
-      let contentTypes = ['application/urlencoded', 'application/json', 'application/x-www-form-urlencoded'];
-      let accepts = ['application/json'];
-      let returnType = Product;
-
-      return this.apiClient.callApi(
-        '/api/store/newproduct', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-    /**
-     * Callback function to receive the result of the searchStore operation.
-     * @callback moduleapi/ProductsApi~searchStoreCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Search records in store
-     * This operation allows user to search store records by search term and catergory
-     * @param {module:model/Componentsparameterssearchterm} searchterm 
-     * @param {String} category 
-     * @param {module:api/ProductsApi~searchStoreCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    searchStore(searchterm, category, callback) {
-      
-      let postBody = null;
-      // verify the required parameter 'searchterm' is set
-      if (searchterm === undefined || searchterm === null) {
-        throw new Error("Missing the required parameter 'searchterm' when calling searchStore");
-      }
-      // verify the required parameter 'category' is set
-      if (category === undefined || category === null) {
-        throw new Error("Missing the required parameter 'category' when calling searchStore");
-      }
-
-      let pathParams = {
-        
-      };
-      let queryParams = {
-        'searchterm': searchterm,'category': category
-      };
-      let headerParams = {
-        
-      };
-      let formParams = {
-        
-      };
-
-      let authNames = [];
-      let contentTypes = [];
-      let accepts = [];
-      let returnType = null;
-
-      return this.apiClient.callApi(
-        '/api/store/search', 'GET',
+        '/store/products/{productid}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -326,27 +131,29 @@ export class ProductsApi {
      * Callback function to receive the result of the updateProduct operation.
      * @callback moduleapi/ProductsApi~updateProductCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Product>{ data The data returned by the service call.
+     * @param {module:model/User{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Update product record
-     * This operation updates a product record
-     * @param {module:model/ComponentsparametersproductID} productID 
+     * update user record by id
+     * endpoint to update a single user record
+     * @param {module:model/Productpropertiespid} productid 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/Product} opts.body A new product to add to the system
      * @param {module:api/ProductsApi~updateProductCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
-    updateProduct(productID, callback) {
-      
-      let postBody = null;
-      // verify the required parameter 'productID' is set
-      if (productID === undefined || productID === null) {
-        throw new Error("Missing the required parameter 'productID' when calling updateProduct");
+    updateProduct(productid, opts, callback) {
+      opts = opts || {};
+      let postBody = opts['body'];
+      // verify the required parameter 'productid' is set
+      if (productid === undefined || productid === null) {
+        throw new Error("Missing the required parameter 'productid' when calling updateProduct");
       }
 
       let pathParams = {
-        'productID': productID
+        'productid': productid
       };
       let queryParams = {
         
@@ -358,13 +165,13 @@ export class ProductsApi {
         
       };
 
-      let authNames = [];
-      let contentTypes = [];
+      let authNames = ['basic'];
+      let contentTypes = ['application/json', 'mulipart/formdata'];
       let accepts = ['application/json'];
-      let returnType = [Product];
+      let returnType = User;
 
       return this.apiClient.callApi(
-        '/api/store/products/edit/{productID}', 'PUT',
+        '/store/products/{productid}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

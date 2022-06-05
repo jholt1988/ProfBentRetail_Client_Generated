@@ -1,6 +1,6 @@
 /*
- * Prof Bentley Ecommerce API
- * A Ecommerce API
+ * Professor Bentley Electronics Retail API
+ * An ecommerce REST API for a retail electronics store. 
  *
  * OpenAPI spec version: 1.5
  * Contact: jordanh316@gmail.com
@@ -23,6 +23,7 @@ import {ApiClient} from '../ApiClient';
 export class User {
   /**
    * Constructs a new <code>User</code>.
+   * User record with user info
    * @alias module:model/User
    * @class
    */
@@ -39,8 +40,8 @@ export class User {
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new User();
-      if (data.hasOwnProperty('userID'))
-        obj.userID = ApiClient.convertToType(data['userID'], 'String');
+      if (data.hasOwnProperty('uid'))
+        obj.uid = ApiClient.convertToType(data['uid'], 'String');
       if (data.hasOwnProperty('username'))
         obj.username = ApiClient.convertToType(data['username'], 'String');
       if (data.hasOwnProperty('password'))
@@ -51,10 +52,10 @@ export class User {
         obj.lastName = ApiClient.convertToType(data['lastName'], 'String');
       if (data.hasOwnProperty('email'))
         obj.email = ApiClient.convertToType(data['email'], 'String');
-      if (data.hasOwnProperty('DOB'))
-        obj.DOB = ApiClient.convertToType(data['DOB'], 'Date');
-      if (data.hasOwnProperty('role'))
-        obj.role = ApiClient.convertToType(data['role'], 'String');
+      if (data.hasOwnProperty('phoneNumber'))
+        obj.phoneNumber = ApiClient.convertToType(data['phoneNumber'], 'String');
+      if (data.hasOwnProperty('dateOfBirth'))
+        obj.dateOfBirth = ApiClient.convertToType(data['dateOfBirth'], 'Date');
       if (data.hasOwnProperty('createdOn'))
         obj.createdOn = ApiClient.convertToType(data['createdOn'], 'Date');
       if (data.hasOwnProperty('updatedOn'))
@@ -65,9 +66,9 @@ export class User {
 }
 
 /**
- * @member {String} userID
+ * @member {String} uid
  */
-User.prototype.userID = undefined;
+User.prototype.uid = undefined;
 
 /**
  * @member {String} username
@@ -95,14 +96,14 @@ User.prototype.lastName = undefined;
 User.prototype.email = undefined;
 
 /**
- * @member {Date} DOB
+ * @member {String} phoneNumber
  */
-User.prototype.DOB = undefined;
+User.prototype.phoneNumber = undefined;
 
 /**
- * @member {String} role
+ * @member {Date} dateOfBirth
  */
-User.prototype.role = undefined;
+User.prototype.dateOfBirth = undefined;
 
 /**
  * @member {Date} createdOn

@@ -1,6 +1,6 @@
 /*
- * Prof Bentley Ecommerce API
- * A Ecommerce API
+ * Professor Bentley Electronics Retail API
+ * An ecommerce REST API for a retail electronics store. 
  *
  * OpenAPI spec version: 1.5
  * Contact: jordanh316@gmail.com
@@ -22,31 +22,31 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ProfBentleyEcommerceApi);
+    factory(root.expect, root.ProfessorBentleyElectronicsRetailApi);
   }
-}(this, function(expect, ProfBentleyEcommerceApi) {
+}(this, function(expect, ProfessorBentleyElectronicsRetailApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ProfBentleyEcommerceApi.CartApi();
+    instance = new ProfessorBentleyElectronicsRetailApi.CartApi();
   });
 
   describe('(package)', function() {
     describe('CartApi', function() {
-      describe('getUserCart', function() {
-        it('should call getUserCart successfully', function(done) {
-          // TODO: uncomment, update parameter values for getUserCart call and complete the assertions
+      describe('addCartItems', function() {
+        it('should call addCartItems successfully', function(done) {
+          // TODO: uncomment, update parameter values for addCartItems call and complete the assertions
           /*
 
-          instance.getUserCart(userID, function(error, data, response) {
+          instance.addCartItems(cartid, function(error, data, response) {
             if (error) {
               done(error);
               return;
             }
             // TODO: update response assertions
-            expect(data).to.be.a(ProfBentleyEcommerceApi.Cart);
+            expect(data).to.be.a(ProfessorBentleyElectronicsRetailApi.InlineResponse200);
 
             done();
           });
@@ -55,18 +55,38 @@
           done();
         });
       });
-      describe('updateUserCart', function() {
-        it('should call updateUserCart successfully', function(done) {
-          // TODO: uncomment, update parameter values for updateUserCart call and complete the assertions
+      describe('postNewCart', function() {
+        it('should call postNewCart successfully', function(done) {
+          // TODO: uncomment postNewCart call and complete the assertions
           /*
 
-          instance.updateUserCart(userID, function(error, data, response) {
+          instance.postNewCart(function(error, data, response) {
             if (error) {
               done(error);
               return;
             }
             // TODO: update response assertions
-            expect(data).to.be.a(ProfBentleyEcommerceApi.Cart);
+            expect(data).to.be.a(ProfessorBentleyElectronicsRetailApi.Cart);
+
+            done();
+          });
+          */
+          // TODO: uncomment and complete method invocation above, then delete this line and the next:
+          done();
+        });
+      });
+      describe('updateCartItems', function() {
+        it('should call updateCartItems successfully', function(done) {
+          // TODO: uncomment, update parameter values for updateCartItems call and complete the assertions
+          /*
+
+          instance.updateCartItems(cartid, function(error, data, response) {
+            if (error) {
+              done(error);
+              return;
+            }
+            // TODO: update response assertions
+            expect(data).to.be.a(ProfessorBentleyElectronicsRetailApi.InlineResponse200);
 
             done();
           });

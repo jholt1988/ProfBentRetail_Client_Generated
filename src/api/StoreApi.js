@@ -14,8 +14,6 @@
  *
  */
 import {ApiClient} from "../ApiClient";
-import {Componentsparametersproductid} from '../model/Componentsparametersproductid';
-import {InlineResponse404} from '../model/InlineResponse404';
 import {Product} from '../model/Product';
 import {User} from '../model/User';
 

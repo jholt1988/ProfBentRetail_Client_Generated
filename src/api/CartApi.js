@@ -15,9 +15,7 @@
  */
 import {ApiClient} from "../ApiClient";
 import {Cart} from '../model/Cart';
-import {Componentsparameterscartid} from '../model/Componentsparameterscartid';
 import {InlineResponse200} from '../model/InlineResponse200';
-import {InlineResponse404} from '../model/InlineResponse404';
 
 /**
 * Cart service.

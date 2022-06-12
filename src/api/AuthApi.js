@@ -14,7 +14,6 @@
  *
  */
 import {ApiClient} from "../ApiClient";
-import {InlineResponse404} from '../model/InlineResponse404';
 import {User} from '../model/User';
 
 /**

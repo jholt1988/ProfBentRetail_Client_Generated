@@ -1,4 +1,4 @@
-# ProfessorBentleyElectronicsRetailApi.InlineResponse200
+# ProfbJsClient.InlineResponse200
 
 ## Properties
 Name | Type | Description | Notes

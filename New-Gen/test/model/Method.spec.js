@@ -22,9 +22,9 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ProfessorBentleyElectronicsRetailApi);
+    factory(root.expect, root.ProfbJsClient);
   }
-}(this, function(expect, ProfessorBentleyElectronicsRetailApi) {
+}(this, function(expect, ProfbJsClient) {
   'use strict';
 
   var instance;
@@ -32,12 +32,12 @@
   describe('(package)', function() {
     describe('Method', function() {
       beforeEach(function() {
-        instance = new ProfessorBentleyElectronicsRetailApi.Method();
+        instance = new ProfbJsClient.Method();
       });
 
       it('should create an instance of Method', function() {
         // TODO: update the code to test Method
-        expect(instance).to.be.a(ProfessorBentleyElectronicsRetailApi.Method);
+        expect(instance).to.be.a(ProfbJsClient.Method);
       });
 
       it('should have the property mid (base name: "mid")', function() {

@@ -22,9 +22,9 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ProfessorBentleyElectronicsRetailApi);
+    factory(root.expect, root.ProfbJsClient);
   }
-}(this, function(expect, ProfessorBentleyElectronicsRetailApi) {
+}(this, function(expect, ProfbJsClient) {
   'use strict';
 
   var instance;
@@ -32,12 +32,12 @@
   describe('(package)', function() {
     describe('InlineResponse404', function() {
       beforeEach(function() {
-        instance = new ProfessorBentleyElectronicsRetailApi.InlineResponse404();
+        instance = new ProfbJsClient.InlineResponse404();
       });
 
       it('should create an instance of InlineResponse404', function() {
         // TODO: update the code to test InlineResponse404
-        expect(instance).to.be.a(ProfessorBentleyElectronicsRetailApi.InlineResponse404);
+        expect(instance).to.be.a(ProfbJsClient.InlineResponse404);
       });
 
       it('should have the property message (base name: "message")', function() {

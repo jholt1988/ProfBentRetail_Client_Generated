@@ -22,9 +22,9 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ProfessorBentleyElectronicsRetailApi);
+    factory(root.expect, root.ProfbJsClient);
   }
-}(this, function(expect, ProfessorBentleyElectronicsRetailApi) {
+}(this, function(expect, ProfbJsClient) {
   'use strict';
 
   var instance;
@@ -32,12 +32,12 @@
   describe('(package)', function() {
     describe('CartItems', function() {
       beforeEach(function() {
-        instance = new ProfessorBentleyElectronicsRetailApi.CartItems();
+        instance = new ProfbJsClient.CartItems();
       });
 
       it('should create an instance of CartItems', function() {
         // TODO: update the code to test CartItems
-        expect(instance).to.be.a(ProfessorBentleyElectronicsRetailApi.CartItems);
+        expect(instance).to.be.a(ProfbJsClient.CartItems);
       });
 
       it('should have the property cid (base name: "cid")', function() {

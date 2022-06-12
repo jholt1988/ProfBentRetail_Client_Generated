@@ -1,4 +1,4 @@
-# ProfessorBentleyElectronicsRetailApi.CartApi
+# ProfbJsClient.CartApi
 
 All URIs are relative to *https://virtserver.swaggerhub.com/holtenterprises/prof-bentley_ecommerce_api/1.5*
 
@@ -18,15 +18,15 @@ endpoint to add items user cart
 
 ### Example
 ```javascript
-import {ProfessorBentleyElectronicsRetailApi} from 'professor_bentley_electronics_retail_api';
-let defaultClient = ProfessorBentleyElectronicsRetailApi.ApiClient.instance;
+import {ProfbJsClient} from 'profb-js-client';
+let defaultClient = ProfbJsClient.ApiClient.instance;
 // Configure HTTP basic authorization: basic
 let basic = defaultClient.authentications['basic'];
 basic.username = 'YOUR USERNAME';
 basic.password = 'YOUR PASSWORD';
 
-let apiInstance = new ProfessorBentleyElectronicsRetailApi.CartApi();
-let cartid = new ProfessorBentleyElectronicsRetailApi.Cartpropertiescid(); // Cartpropertiescid | 
+let apiInstance = new ProfbJsClient.CartApi();
+let cartid = new ProfbJsClient.Cartid(); // Cartid | 
 
 apiInstance.addCartItems(cartid, (error, data, response) => {
   if (error) {
@@ -41,7 +41,7 @@ apiInstance.addCartItems(cartid, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cartid** | [**Cartpropertiescid**](.md)|  | 
+ **cartid** | [**Cartid**](.md)|  | 
 
 ### Return type
 
@@ -66,14 +66,14 @@ endpoint to create a new user cart records
 
 ### Example
 ```javascript
-import {ProfessorBentleyElectronicsRetailApi} from 'professor_bentley_electronics_retail_api';
-let defaultClient = ProfessorBentleyElectronicsRetailApi.ApiClient.instance;
+import {ProfbJsClient} from 'profb-js-client';
+let defaultClient = ProfbJsClient.ApiClient.instance;
 // Configure HTTP basic authorization: basic
 let basic = defaultClient.authentications['basic'];
 basic.username = 'YOUR USERNAME';
 basic.password = 'YOUR PASSWORD';
 
-let apiInstance = new ProfessorBentleyElectronicsRetailApi.CartApi();
+let apiInstance = new ProfbJsClient.CartApi();
 apiInstance.postNewCart((error, data, response) => {
   if (error) {
     console.error(error);
@@ -109,15 +109,15 @@ endpoint to update a user cart record
 
 ### Example
 ```javascript
-import {ProfessorBentleyElectronicsRetailApi} from 'professor_bentley_electronics_retail_api';
-let defaultClient = ProfessorBentleyElectronicsRetailApi.ApiClient.instance;
+import {ProfbJsClient} from 'profb-js-client';
+let defaultClient = ProfbJsClient.ApiClient.instance;
 // Configure HTTP basic authorization: basic
 let basic = defaultClient.authentications['basic'];
 basic.username = 'YOUR USERNAME';
 basic.password = 'YOUR PASSWORD';
 
-let apiInstance = new ProfessorBentleyElectronicsRetailApi.CartApi();
-let cartid = new ProfessorBentleyElectronicsRetailApi.Cartpropertiescid(); // Cartpropertiescid | 
+let apiInstance = new ProfbJsClient.CartApi();
+let cartid = new ProfbJsClient.Cartid(); // Cartid | 
 
 apiInstance.updateCartItems(cartid, (error, data, response) => {
   if (error) {
@@ -132,7 +132,7 @@ apiInstance.updateCartItems(cartid, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cartid** | [**Cartpropertiescid**](.md)|  | 
+ **cartid** | [**Cartid**](.md)|  | 
 
 ### Return type
 

@@ -1,4 +1,4 @@
-# ProfessorBentleyElectronicsRetailApi.Payment
+# ProfbJsClient.Payment
 
 ## Properties
 Name | Type | Description | Notes

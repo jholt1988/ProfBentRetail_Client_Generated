@@ -22,15 +22,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ProfessorBentleyElectronicsRetailApi);
+    factory(root.expect, root.ProfbJsClient);
   }
-}(this, function(expect, ProfessorBentleyElectronicsRetailApi) {
+}(this, function(expect, ProfbJsClient) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ProfessorBentleyElectronicsRetailApi.AuthApi();
+    instance = new ProfbJsClient.AuthApi();
   });
 
   describe('(package)', function() {
@@ -47,7 +47,7 @@
               return;
             }
             // TODO: update response assertions
-            expect(data).to.be.a(ProfessorBentleyElectronicsRetailApi.User);
+            expect(data).to.be.a(ProfbJsClient.User);
 
             done();
           });
@@ -67,7 +67,7 @@
               return;
             }
             // TODO: update response assertions
-            expect(data).to.be.a(ProfessorBentleyElectronicsRetailApi.User);
+            expect(data).to.be.a(ProfbJsClient.User);
 
             done();
           });

@@ -22,9 +22,9 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ProfessorBentleyElectronicsRetailApi);
+    factory(root.expect, root.ProfbJsClient);
   }
-}(this, function(expect, ProfessorBentleyElectronicsRetailApi) {
+}(this, function(expect, ProfbJsClient) {
   'use strict';
 
   var instance;
@@ -32,12 +32,12 @@
   describe('(package)', function() {
     describe('Status', function() {
       beforeEach(function() {
-        instance = new ProfessorBentleyElectronicsRetailApi.Status();
+        instance = new ProfbJsClient.Status();
       });
 
       it('should create an instance of Status', function() {
         // TODO: update the code to test Status
-        expect(instance).to.be.a(ProfessorBentleyElectronicsRetailApi.Status);
+        expect(instance).to.be.a(ProfbJsClient.Status);
       });
 
       it('should have the property statusid (base name: "statusid")', function() {

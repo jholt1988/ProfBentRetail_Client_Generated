@@ -1,4 +1,4 @@
-# ProfessorBentleyElectronicsRetailApi.VendorsApi
+# ProfbJsClient.VendorsApi
 
 All URIs are relative to *https://virtserver.swaggerhub.com/holtenterprises/prof-bentley_ecommerce_api/1.5*
 
@@ -18,14 +18,14 @@ endpoint to get an array of all vendor records
 
 ### Example
 ```javascript
-import {ProfessorBentleyElectronicsRetailApi} from 'professor_bentley_electronics_retail_api';
-let defaultClient = ProfessorBentleyElectronicsRetailApi.ApiClient.instance;
+import {ProfbJsClient} from 'profb-js-client';
+let defaultClient = ProfbJsClient.ApiClient.instance;
 // Configure HTTP basic authorization: basic
 let basic = defaultClient.authentications['basic'];
 basic.username = 'YOUR USERNAME';
 basic.password = 'YOUR PASSWORD';
 
-let apiInstance = new ProfessorBentleyElectronicsRetailApi.VendorsApi();
+let apiInstance = new ProfbJsClient.VendorsApi();
 apiInstance.getAllvendors((error, data, response) => {
   if (error) {
     console.error(error);
@@ -61,15 +61,15 @@ endpoint to get a single vendor record
 
 ### Example
 ```javascript
-import {ProfessorBentleyElectronicsRetailApi} from 'professor_bentley_electronics_retail_api';
-let defaultClient = ProfessorBentleyElectronicsRetailApi.ApiClient.instance;
+import {ProfbJsClient} from 'profb-js-client';
+let defaultClient = ProfbJsClient.ApiClient.instance;
 // Configure HTTP basic authorization: basic
 let basic = defaultClient.authentications['basic'];
 basic.username = 'YOUR USERNAME';
 basic.password = 'YOUR PASSWORD';
 
-let apiInstance = new ProfessorBentleyElectronicsRetailApi.VendorsApi();
-let vendorid = new ProfessorBentleyElectronicsRetailApi.Vendorpropertiesvid(); // Vendorpropertiesvid | 
+let apiInstance = new ProfbJsClient.VendorsApi();
+let vendorid = new ProfbJsClient.Vendorpropertiesvid(); // Vendorpropertiesvid | 
 
 apiInstance.getVendor(vendorid, (error, data, response) => {
   if (error) {
@@ -109,17 +109,17 @@ endpoint to update a single vendor record
 
 ### Example
 ```javascript
-import {ProfessorBentleyElectronicsRetailApi} from 'professor_bentley_electronics_retail_api';
-let defaultClient = ProfessorBentleyElectronicsRetailApi.ApiClient.instance;
+import {ProfbJsClient} from 'profb-js-client';
+let defaultClient = ProfbJsClient.ApiClient.instance;
 // Configure HTTP basic authorization: basic
 let basic = defaultClient.authentications['basic'];
 basic.username = 'YOUR USERNAME';
 basic.password = 'YOUR PASSWORD';
 
-let apiInstance = new ProfessorBentleyElectronicsRetailApi.VendorsApi();
-let vendorid = new ProfessorBentleyElectronicsRetailApi.Vendorpropertiesvid(); // Vendorpropertiesvid | 
+let apiInstance = new ProfbJsClient.VendorsApi();
+let vendorid = new ProfbJsClient.Vendorpropertiesvid(); // Vendorpropertiesvid | 
 let opts = { 
-  'body': new ProfessorBentleyElectronicsRetailApi.Vendor() // Vendor | A new user order to add to the system
+  'body': new ProfbJsClient.Vendor() // Vendor | A new user order to add to the system
 };
 apiInstance.updateVendor(vendorid, opts, (error, data, response) => {
   if (error) {
@@ -147,6 +147,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, mulipart/formdata
+ - **Content-Type**: application/json, mulipart/formdata, application/x-www-form-urlencoded
  - **Accept**: application/json
 

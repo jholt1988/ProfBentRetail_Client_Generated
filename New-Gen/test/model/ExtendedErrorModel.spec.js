@@ -22,9 +22,9 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ProfessorBentleyElectronicsRetailApi);
+    factory(root.expect, root.ProfbJsClient);
   }
-}(this, function(expect, ProfessorBentleyElectronicsRetailApi) {
+}(this, function(expect, ProfbJsClient) {
   'use strict';
 
   var instance;
@@ -32,12 +32,12 @@
   describe('(package)', function() {
     describe('ExtendedErrorModel', function() {
       beforeEach(function() {
-        instance = new ProfessorBentleyElectronicsRetailApi.ExtendedErrorModel();
+        instance = new ProfbJsClient.ExtendedErrorModel();
       });
 
       it('should create an instance of ExtendedErrorModel', function() {
         // TODO: update the code to test ExtendedErrorModel
-        expect(instance).to.be.a(ProfessorBentleyElectronicsRetailApi.ExtendedErrorModel);
+        expect(instance).to.be.a(ProfbJsClient.ExtendedErrorModel);
       });
 
       it('should have the property rootCause (base name: "rootCause")', function() {

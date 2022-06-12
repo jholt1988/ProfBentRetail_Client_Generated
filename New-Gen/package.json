@@ -1,7 +1,7 @@
 {
-  "name": "professor_bentley_electronics_retail_api",
-  "version": "1.5",
-  "description": "An_ecommerce_REST_API_for_a_retail_electronics_store__",
+  "name": "profb-js-client",
+  "version": "1.67",
+  "description": "",
   "license": "Unlicense",
   "main": "src/index.js",
   "scripts": {

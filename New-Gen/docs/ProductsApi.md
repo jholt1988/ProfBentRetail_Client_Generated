@@ -1,4 +1,4 @@
-# ProfessorBentleyElectronicsRetailApi.ProductsApi
+# ProfbJsClient.ProductsApi
 
 All URIs are relative to *https://virtserver.swaggerhub.com/holtenterprises/prof-bentley_ecommerce_api/1.5*
 
@@ -18,14 +18,14 @@ endpoint to get an array of all product records
 
 ### Example
 ```javascript
-import {ProfessorBentleyElectronicsRetailApi} from 'professor_bentley_electronics_retail_api';
-let defaultClient = ProfessorBentleyElectronicsRetailApi.ApiClient.instance;
+import {ProfbJsClient} from 'profb-js-client';
+let defaultClient = ProfbJsClient.ApiClient.instance;
 // Configure HTTP basic authorization: basic
 let basic = defaultClient.authentications['basic'];
 basic.username = 'YOUR USERNAME';
 basic.password = 'YOUR PASSWORD';
 
-let apiInstance = new ProfessorBentleyElectronicsRetailApi.ProductsApi();
+let apiInstance = new ProfbJsClient.ProductsApi();
 apiInstance.getAllproducts((error, data, response) => {
   if (error) {
     console.error(error);
@@ -61,15 +61,15 @@ endpoint to get a single user record
 
 ### Example
 ```javascript
-import {ProfessorBentleyElectronicsRetailApi} from 'professor_bentley_electronics_retail_api';
-let defaultClient = ProfessorBentleyElectronicsRetailApi.ApiClient.instance;
+import {ProfbJsClient} from 'profb-js-client';
+let defaultClient = ProfbJsClient.ApiClient.instance;
 // Configure HTTP basic authorization: basic
 let basic = defaultClient.authentications['basic'];
 basic.username = 'YOUR USERNAME';
 basic.password = 'YOUR PASSWORD';
 
-let apiInstance = new ProfessorBentleyElectronicsRetailApi.ProductsApi();
-let productid = new ProfessorBentleyElectronicsRetailApi.Productpropertiespid(); // Productpropertiespid | 
+let apiInstance = new ProfbJsClient.ProductsApi();
+let productid = new ProfbJsClient.Productid(); // Productid | 
 
 apiInstance.getProduct(productid, (error, data, response) => {
   if (error) {
@@ -84,7 +84,7 @@ apiInstance.getProduct(productid, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productid** | [**Productpropertiespid**](.md)|  | 
+ **productid** | [**Productid**](.md)|  | 
 
 ### Return type
 
@@ -109,17 +109,17 @@ endpoint to update a single user record
 
 ### Example
 ```javascript
-import {ProfessorBentleyElectronicsRetailApi} from 'professor_bentley_electronics_retail_api';
-let defaultClient = ProfessorBentleyElectronicsRetailApi.ApiClient.instance;
+import {ProfbJsClient} from 'profb-js-client';
+let defaultClient = ProfbJsClient.ApiClient.instance;
 // Configure HTTP basic authorization: basic
 let basic = defaultClient.authentications['basic'];
 basic.username = 'YOUR USERNAME';
 basic.password = 'YOUR PASSWORD';
 
-let apiInstance = new ProfessorBentleyElectronicsRetailApi.ProductsApi();
-let productid = new ProfessorBentleyElectronicsRetailApi.Productpropertiespid(); // Productpropertiespid | 
+let apiInstance = new ProfbJsClient.ProductsApi();
+let productid = new ProfbJsClient.Productid(); // Productid | 
 let opts = { 
-  'body': new ProfessorBentleyElectronicsRetailApi.Product() // Product | A new product to add to the system
+  'body': new ProfbJsClient.Product() // Product | A new product to add to the system
 };
 apiInstance.updateProduct(productid, opts, (error, data, response) => {
   if (error) {
@@ -134,7 +134,7 @@ apiInstance.updateProduct(productid, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productid** | [**Productpropertiespid**](.md)|  | 
+ **productid** | [**Productid**](.md)|  | 
  **body** | [**Product**](Product.md)| A new product to add to the system | [optional] 
 
 ### Return type
@@ -147,6 +147,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, mulipart/formdata
+ - **Content-Type**: application/json, application/x-urlencoded
  - **Accept**: application/json
 

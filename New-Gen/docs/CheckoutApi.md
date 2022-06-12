@@ -1,4 +1,4 @@
-# ProfessorBentleyElectronicsRetailApi.CheckoutApi
+# ProfbJsClient.CheckoutApi
 
 All URIs are relative to *https://virtserver.swaggerhub.com/holtenterprises/prof-bentley_ecommerce_api/1.5*
 
@@ -16,17 +16,17 @@ endpoint to checkout a user order
 
 ### Example
 ```javascript
-import {ProfessorBentleyElectronicsRetailApi} from 'professor_bentley_electronics_retail_api';
-let defaultClient = ProfessorBentleyElectronicsRetailApi.ApiClient.instance;
+import {ProfbJsClient} from 'profb-js-client';
+let defaultClient = ProfbJsClient.ApiClient.instance;
 // Configure HTTP basic authorization: basic
 let basic = defaultClient.authentications['basic'];
 basic.username = 'YOUR USERNAME';
 basic.password = 'YOUR PASSWORD';
 
-let apiInstance = new ProfessorBentleyElectronicsRetailApi.CheckoutApi();
-let orderid = new ProfessorBentleyElectronicsRetailApi.Orderpropertiesoid(); // Orderpropertiesoid | 
+let apiInstance = new ProfbJsClient.CheckoutApi();
+let orderid = new ProfbJsClient.Orderid(); // Orderid | 
 let opts = { 
-  'body': new ProfessorBentleyElectronicsRetailApi.Payment() // Payment | a new user payment object
+  'body': new ProfbJsClient.Payment() // Payment | a new user payment object
 };
 apiInstance.postPayment(orderid, opts, (error, data, response) => {
   if (error) {
@@ -41,7 +41,7 @@ apiInstance.postPayment(orderid, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderid** | [**Orderpropertiesoid**](.md)|  | 
+ **orderid** | [**Orderid**](.md)|  | 
  **body** | [**Payment**](Payment.md)| a new user payment object | [optional] 
 
 ### Return type
@@ -54,6 +54,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, mulipart/formdata
+ - **Content-Type**: application/json, application/x-www-form-urlencoded
  - **Accept**: application/json
 

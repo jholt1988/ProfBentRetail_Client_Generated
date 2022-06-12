@@ -22,9 +22,9 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ProfessorBentleyElectronicsRetailApi);
+    factory(root.expect, root.ProfbJsClient);
   }
-}(this, function(expect, ProfessorBentleyElectronicsRetailApi) {
+}(this, function(expect, ProfbJsClient) {
   'use strict';
 
   var instance;
@@ -32,12 +32,12 @@
   describe('(package)', function() {
     describe('Category', function() {
       beforeEach(function() {
-        instance = new ProfessorBentleyElectronicsRetailApi.Category();
+        instance = new ProfbJsClient.Category();
       });
 
       it('should create an instance of Category', function() {
         // TODO: update the code to test Category
-        expect(instance).to.be.a(ProfessorBentleyElectronicsRetailApi.Category);
+        expect(instance).to.be.a(ProfbJsClient.Category);
       });
 
       it('should have the property catid (base name: "catid")', function() {

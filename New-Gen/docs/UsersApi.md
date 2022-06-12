@@ -1,4 +1,4 @@
-# ProfessorBentleyElectronicsRetailApi.UsersApi
+# ProfbJsClient.UsersApi
 
 All URIs are relative to *https://virtserver.swaggerhub.com/holtenterprises/prof-bentley_ecommerce_api/1.5*
 
@@ -18,14 +18,14 @@ endpoint to get an array of all user records
 
 ### Example
 ```javascript
-import {ProfessorBentleyElectronicsRetailApi} from 'professor_bentley_electronics_retail_api';
-let defaultClient = ProfessorBentleyElectronicsRetailApi.ApiClient.instance;
+import {ProfbJsClient} from 'profb-js-client';
+let defaultClient = ProfbJsClient.ApiClient.instance;
 // Configure HTTP basic authorization: basic
 let basic = defaultClient.authentications['basic'];
 basic.username = 'YOUR USERNAME';
 basic.password = 'YOUR PASSWORD';
 
-let apiInstance = new ProfessorBentleyElectronicsRetailApi.UsersApi();
+let apiInstance = new ProfbJsClient.UsersApi();
 apiInstance.getAllUsers((error, data, response) => {
   if (error) {
     console.error(error);
@@ -61,15 +61,15 @@ endpoint to get a single user record
 
 ### Example
 ```javascript
-import {ProfessorBentleyElectronicsRetailApi} from 'professor_bentley_electronics_retail_api';
-let defaultClient = ProfessorBentleyElectronicsRetailApi.ApiClient.instance;
+import {ProfbJsClient} from 'profb-js-client';
+let defaultClient = ProfbJsClient.ApiClient.instance;
 // Configure HTTP basic authorization: basic
 let basic = defaultClient.authentications['basic'];
 basic.username = 'YOUR USERNAME';
 basic.password = 'YOUR PASSWORD';
 
-let apiInstance = new ProfessorBentleyElectronicsRetailApi.UsersApi();
-let userid = new ProfessorBentleyElectronicsRetailApi.Userpropertiesuid(); // Userpropertiesuid | 
+let apiInstance = new ProfbJsClient.UsersApi();
+let userid = new ProfbJsClient.Userid(); // Userid | 
 
 apiInstance.getUser(userid, (error, data, response) => {
   if (error) {
@@ -84,7 +84,7 @@ apiInstance.getUser(userid, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userid** | [**Userpropertiesuid**](.md)|  | 
+ **userid** | [**Userid**](.md)|  | 
 
 ### Return type
 
@@ -109,15 +109,15 @@ endpoint to update a single user record
 
 ### Example
 ```javascript
-import {ProfessorBentleyElectronicsRetailApi} from 'professor_bentley_electronics_retail_api';
-let defaultClient = ProfessorBentleyElectronicsRetailApi.ApiClient.instance;
+import {ProfbJsClient} from 'profb-js-client';
+let defaultClient = ProfbJsClient.ApiClient.instance;
 // Configure HTTP basic authorization: basic
 let basic = defaultClient.authentications['basic'];
 basic.username = 'YOUR USERNAME';
 basic.password = 'YOUR PASSWORD';
 
-let apiInstance = new ProfessorBentleyElectronicsRetailApi.UsersApi();
-let userid = new ProfessorBentleyElectronicsRetailApi.Userpropertiesuid(); // Userpropertiesuid | 
+let apiInstance = new ProfbJsClient.UsersApi();
+let userid = new ProfbJsClient.Userid(); // Userid | 
 
 apiInstance.updateUser(userid, (error, data, response) => {
   if (error) {
@@ -132,7 +132,7 @@ apiInstance.updateUser(userid, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userid** | [**Userpropertiesuid**](.md)|  | 
+ **userid** | [**Userid**](.md)|  | 
 
 ### Return type
 

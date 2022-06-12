@@ -1,4 +1,4 @@
-# ProfessorBentleyElectronicsRetailApi.ErrorModel
+# ProfbJsClient.ErrorModel
 
 ## Properties
 Name | Type | Description | Notes

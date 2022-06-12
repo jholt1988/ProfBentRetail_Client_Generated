@@ -22,9 +22,9 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ProfessorBentleyElectronicsRetailApi);
+    factory(root.expect, root.ProfbJsClient);
   }
-}(this, function(expect, ProfessorBentleyElectronicsRetailApi) {
+}(this, function(expect, ProfbJsClient) {
   'use strict';
 
   var instance;
@@ -32,12 +32,12 @@
   describe('(package)', function() {
     describe('UserAddress', function() {
       beforeEach(function() {
-        instance = new ProfessorBentleyElectronicsRetailApi.UserAddress();
+        instance = new ProfbJsClient.UserAddress();
       });
 
       it('should create an instance of UserAddress', function() {
         // TODO: update the code to test UserAddress
-        expect(instance).to.be.a(ProfessorBentleyElectronicsRetailApi.UserAddress);
+        expect(instance).to.be.a(ProfbJsClient.UserAddress);
       });
 
       it('should have the property addressid (base name: "addressid")', function() {

@@ -1,4 +1,4 @@
-# ProfessorBentleyElectronicsRetailApi.Cart
+# ProfbJsClient.Cart
 
 ## Properties
 Name | Type | Description | Notes

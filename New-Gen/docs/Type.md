@@ -1,4 +1,4 @@
-# ProfessorBentleyElectronicsRetailApi.Type
+# ProfbJsClient.Type
 
 ## Properties
 Name | Type | Description | Notes

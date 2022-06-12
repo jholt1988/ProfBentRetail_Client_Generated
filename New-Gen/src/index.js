@@ -14,43 +14,46 @@
  *
  */
 import {ApiClient} from './ApiClient';
-import {Address} from './model/Address';
-import {Cart} from './model/Cart';
-import {CartItems} from './model/CartItems';
-import {Category} from './model/Category';
-import {Delivery} from './model/Delivery';
-import {ErrorModel} from './model/ErrorModel';
-import {ExtendedErrorModel} from './model/ExtendedErrorModel';
-import {InlineResponse200} from './model/InlineResponse200';
-import {InlineResponse404} from './model/InlineResponse404';
-import {Method} from './model/Method';
-import {Order} from './model/Order';
-import {OrderItems} from './model/OrderItems';
-import {Payment} from './model/Payment';
-import {Product} from './model/Product';
-import {Status} from './model/Status';
-import {Type} from './model/Type';
-import {User} from './model/User';
-import {UserAddress} from './model/UserAddress';
-import {Vendor} from './model/Vendor';
-import {AuthApi} from './api/AuthApi';
-import {CartApi} from './api/CartApi';
-import {CheckoutApi} from './api/CheckoutApi';
-import {OrdersApi} from './api/OrdersApi';
-import {ProductsApi} from './api/ProductsApi';
-import {StoreApi} from './api/StoreApi';
-import {UsersApi} from './api/UsersApi';
-import {VendorsApi} from './api/VendorsApi';
+import {Address} from './Address';
+import {Cart} from './Cart';
+import {CartItems} from './CartItems';
+import {Cartid} from './Cartid';
+import {Category} from './Category';
+import {Delivery} from './Delivery';
+import {ErrorModel} from './ErrorModel';
+import {ExtendedErrorModel} from './ExtendedErrorModel';
+import {InlineResponse200} from './InlineResponse200';
+import {InlineResponse404} from './InlineResponse404';
+import {Method} from './Method';
+import {Order} from './Order';
+import {OrderItems} from './OrderItems';
+import {Orderid} from './Orderid';
+import {Payment} from './Payment';
+import {Product} from './Product';
+import {Productid} from './Productid';
+import {Status} from './Status';
+import {Type} from './Type';
+import {User} from './User';
+import {UserAddress} from './UserAddress';
+import {Userid} from './Userid';
+import {Vendor} from './Vendor';
+import {AuthApi} from './AuthApi';
+import {CartApi} from './CartApi';
+import {CheckoutApi} from './CheckoutApi';
+import {OrdersApi} from './OrdersApi';
+import {ProductsApi} from './ProductsApi';
+import {StoreApi} from './StoreApi';
+import {UsersApi} from './UsersApi';
+import {VendorsApi} from './VendorsApi';
 
 /**
-* An_ecommerce_REST_API_for_a_retail_electronics_store__.<br>
 * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
 * <p>
 * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
 * <pre>
-* var ProfessorBentleyElectronicsRetailApi = require('index'); // See note below*.
-* var xxxSvc = new ProfessorBentleyElectronicsRetailApi.XxxApi(); // Allocate the API class we're going to use.
-* var yyyModel = new ProfessorBentleyElectronicsRetailApi.Yyy(); // Construct a model instance.
+* var ProfbJsClient = require('index'); // See note below*.
+* var xxxSvc = new ProfbJsClient.XxxApi(); // Allocate the API class we're going to use.
+* var yyyModel = new ProfbJsClient.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -62,8 +65,8 @@ import {VendorsApi} from './api/VendorsApi';
 * <p>
 * A non-AMD browser application (discouraged) might do something like this:
 * <pre>
-* var xxxSvc = new ProfessorBentleyElectronicsRetailApi.XxxApi(); // Allocate the API class we're going to use.
-* var yyy = new ProfessorBentleyElectronicsRetailApi.Yyy(); // Construct a model instance.
+* var xxxSvc = new ProfbJsClient.XxxApi(); // Allocate the API class we're going to use.
+* var yyy = new ProfbJsClient.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -71,7 +74,7 @@ import {VendorsApi} from './api/VendorsApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.5
+* @version 1.67
 */
 export {
     /**
@@ -82,163 +85,187 @@ export {
 
     /**
      * The Address model constructor.
-     * @property {module:model/Address}
+     * @property {module:Address}
      */
     Address,
 
     /**
      * The Cart model constructor.
-     * @property {module:model/Cart}
+     * @property {module:Cart}
      */
     Cart,
 
     /**
      * The CartItems model constructor.
-     * @property {module:model/CartItems}
+     * @property {module:CartItems}
      */
     CartItems,
 
     /**
+     * The Cartid model constructor.
+     * @property {module:Cartid}
+     */
+    Cartid,
+
+    /**
      * The Category model constructor.
-     * @property {module:model/Category}
+     * @property {module:Category}
      */
     Category,
 
     /**
      * The Delivery model constructor.
-     * @property {module:model/Delivery}
+     * @property {module:Delivery}
      */
     Delivery,
 
     /**
      * The ErrorModel model constructor.
-     * @property {module:model/ErrorModel}
+     * @property {module:ErrorModel}
      */
     ErrorModel,
 
     /**
      * The ExtendedErrorModel model constructor.
-     * @property {module:model/ExtendedErrorModel}
+     * @property {module:ExtendedErrorModel}
      */
     ExtendedErrorModel,
 
     /**
      * The InlineResponse200 model constructor.
-     * @property {module:model/InlineResponse200}
+     * @property {module:InlineResponse200}
      */
     InlineResponse200,
 
     /**
      * The InlineResponse404 model constructor.
-     * @property {module:model/InlineResponse404}
+     * @property {module:InlineResponse404}
      */
     InlineResponse404,
 
     /**
      * The Method model constructor.
-     * @property {module:model/Method}
+     * @property {module:Method}
      */
     Method,
 
     /**
      * The Order model constructor.
-     * @property {module:model/Order}
+     * @property {module:Order}
      */
     Order,
 
     /**
      * The OrderItems model constructor.
-     * @property {module:model/OrderItems}
+     * @property {module:OrderItems}
      */
     OrderItems,
 
     /**
+     * The Orderid model constructor.
+     * @property {module:Orderid}
+     */
+    Orderid,
+
+    /**
      * The Payment model constructor.
-     * @property {module:model/Payment}
+     * @property {module:Payment}
      */
     Payment,
 
     /**
      * The Product model constructor.
-     * @property {module:model/Product}
+     * @property {module:Product}
      */
     Product,
 
     /**
+     * The Productid model constructor.
+     * @property {module:Productid}
+     */
+    Productid,
+
+    /**
      * The Status model constructor.
-     * @property {module:model/Status}
+     * @property {module:Status}
      */
     Status,
 
     /**
      * The Type model constructor.
-     * @property {module:model/Type}
+     * @property {module:Type}
      */
     Type,
 
     /**
      * The User model constructor.
-     * @property {module:model/User}
+     * @property {module:User}
      */
     User,
 
     /**
      * The UserAddress model constructor.
-     * @property {module:model/UserAddress}
+     * @property {module:UserAddress}
      */
     UserAddress,
 
     /**
+     * The Userid model constructor.
+     * @property {module:Userid}
+     */
+    Userid,
+
+    /**
      * The Vendor model constructor.
-     * @property {module:model/Vendor}
+     * @property {module:Vendor}
      */
     Vendor,
 
     /**
     * The AuthApi service constructor.
-    * @property {module:api/AuthApi}
+    * @property {module:AuthApi}
     */
     AuthApi,
 
     /**
     * The CartApi service constructor.
-    * @property {module:api/CartApi}
+    * @property {module:CartApi}
     */
     CartApi,
 
     /**
     * The CheckoutApi service constructor.
-    * @property {module:api/CheckoutApi}
+    * @property {module:CheckoutApi}
     */
     CheckoutApi,
 
     /**
     * The OrdersApi service constructor.
-    * @property {module:api/OrdersApi}
+    * @property {module:OrdersApi}
     */
     OrdersApi,
 
     /**
     * The ProductsApi service constructor.
-    * @property {module:api/ProductsApi}
+    * @property {module:ProductsApi}
     */
     ProductsApi,
 
     /**
     * The StoreApi service constructor.
-    * @property {module:api/StoreApi}
+    * @property {module:StoreApi}
     */
     StoreApi,
 
     /**
     * The UsersApi service constructor.
-    * @property {module:api/UsersApi}
+    * @property {module:UsersApi}
     */
     UsersApi,
 
     /**
     * The VendorsApi service constructor.
-    * @property {module:api/VendorsApi}
+    * @property {module:VendorsApi}
     */
     VendorsApi
 };

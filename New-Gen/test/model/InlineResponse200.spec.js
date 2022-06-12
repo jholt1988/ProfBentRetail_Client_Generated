@@ -22,9 +22,9 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ProfessorBentleyElectronicsRetailApi);
+    factory(root.expect, root.ProfbJsClient);
   }
-}(this, function(expect, ProfessorBentleyElectronicsRetailApi) {
+}(this, function(expect, ProfbJsClient) {
   'use strict';
 
   var instance;
@@ -32,12 +32,12 @@
   describe('(package)', function() {
     describe('InlineResponse200', function() {
       beforeEach(function() {
-        instance = new ProfessorBentleyElectronicsRetailApi.InlineResponse200();
+        instance = new ProfbJsClient.InlineResponse200();
       });
 
       it('should create an instance of InlineResponse200', function() {
         // TODO: update the code to test InlineResponse200
-        expect(instance).to.be.a(ProfessorBentleyElectronicsRetailApi.InlineResponse200);
+        expect(instance).to.be.a(ProfbJsClient.InlineResponse200);
       });
 
       it('should have the property cart (base name: "cart")', function() {

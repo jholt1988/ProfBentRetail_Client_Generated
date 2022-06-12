@@ -1,4 +1,4 @@
-# ProfessorBentleyElectronicsRetailApi.AuthApi
+# ProfbJsClient.AuthApi
 
 All URIs are relative to *https://virtserver.swaggerhub.com/holtenterprises/prof-bentley_ecommerce_api/1.5*
 
@@ -17,16 +17,16 @@ creates a new user record
 
 ### Example
 ```javascript
-import {ProfessorBentleyElectronicsRetailApi} from 'professor_bentley_electronics_retail_api';
-let defaultClient = ProfessorBentleyElectronicsRetailApi.ApiClient.instance;
+import {ProfbJsClient} from 'profb-js-client';
+let defaultClient = ProfbJsClient.ApiClient.instance;
 // Configure HTTP basic authorization: basic
 let basic = defaultClient.authentications['basic'];
 basic.username = 'YOUR USERNAME';
 basic.password = 'YOUR PASSWORD';
 
-let apiInstance = new ProfessorBentleyElectronicsRetailApi.AuthApi();
+let apiInstance = new ProfbJsClient.AuthApi();
 let opts = { 
-  'body': new ProfessorBentleyElectronicsRetailApi.User() // User | A new user record to add to the system
+  'body': new ProfbJsClient.User() // User | A new user record to add to the system
 };
 apiInstance.registerNewUser(opts, (error, data, response) => {
   if (error) {
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, mulipart/formdata
- - **Accept**: application/json
+ - **Accept**: application/x-urlencoded
 
 <a name="userLogin"></a>
 # **userLogin**
@@ -66,14 +66,14 @@ login user into system
 
 ### Example
 ```javascript
-import {ProfessorBentleyElectronicsRetailApi} from 'professor_bentley_electronics_retail_api';
-let defaultClient = ProfessorBentleyElectronicsRetailApi.ApiClient.instance;
+import {ProfbJsClient} from 'profb-js-client';
+let defaultClient = ProfbJsClient.ApiClient.instance;
 // Configure HTTP basic authorization: basic
 let basic = defaultClient.authentications['basic'];
 basic.username = 'YOUR USERNAME';
 basic.password = 'YOUR PASSWORD';
 
-let apiInstance = new ProfessorBentleyElectronicsRetailApi.AuthApi();
+let apiInstance = new ProfbJsClient.AuthApi();
 apiInstance.userLogin((error, data, response) => {
   if (error) {
     console.error(error);

@@ -1,4 +1,4 @@
-# ProfbJsClient.Order
+# profbent.Order
 
 ## Properties
 Name | Type | Description | Notes

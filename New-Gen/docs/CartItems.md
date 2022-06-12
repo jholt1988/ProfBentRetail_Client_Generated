@@ -1,4 +1,4 @@
-# ProfbJsClient.CartItems
+# profbent.CartItems
 
 ## Properties
 Name | Type | Description | Notes

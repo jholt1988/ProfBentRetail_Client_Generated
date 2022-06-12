@@ -1,4 +1,4 @@
-# ProfbJsClient.Status
+# profbent.Status
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# ProfbJsClient.UsersApi
+# profbent.UsersApi
 
 All URIs are relative to *https://virtserver.swaggerhub.com/holtenterprises/prof-bentley_ecommerce_api/1.5*
 
@@ -18,14 +18,14 @@ endpoint to get an array of all user records
 
 ### Example
 ```javascript
-import {ProfbJsClient} from 'profb-js-client';
-let defaultClient = ProfbJsClient.ApiClient.instance;
+import profbent from 'profb-js-client';
+let defaultClient = profbent.ApiClient.instance;
 // Configure HTTP basic authorization: basic
 let basic = defaultClient.authentications['basic'];
 basic.username = 'YOUR USERNAME';
 basic.password = 'YOUR PASSWORD';
 
-let apiInstance = new ProfbJsClient.UsersApi();
+let apiInstance = new profbent.UsersApi();
 apiInstance.getAllUsers((error, data, response) => {
   if (error) {
     console.error(error);
@@ -61,15 +61,15 @@ endpoint to get a single user record
 
 ### Example
 ```javascript
-import {ProfbJsClient} from 'profb-js-client';
-let defaultClient = ProfbJsClient.ApiClient.instance;
+import profbent from 'profb-js-client';
+let defaultClient = profbent.ApiClient.instance;
 // Configure HTTP basic authorization: basic
 let basic = defaultClient.authentications['basic'];
 basic.username = 'YOUR USERNAME';
 basic.password = 'YOUR PASSWORD';
 
-let apiInstance = new ProfbJsClient.UsersApi();
-let userid = new ProfbJsClient.Userid(); // Userid | 
+let apiInstance = new profbent.UsersApi();
+let userid = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
 apiInstance.getUser(userid, (error, data, response) => {
   if (error) {
@@ -84,7 +84,7 @@ apiInstance.getUser(userid, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userid** | [**Userid**](.md)|  | 
+ **userid** | [**String**](.md)|  | 
 
 ### Return type
 
@@ -109,15 +109,15 @@ endpoint to update a single user record
 
 ### Example
 ```javascript
-import {ProfbJsClient} from 'profb-js-client';
-let defaultClient = ProfbJsClient.ApiClient.instance;
+import profbent from 'profb-js-client';
+let defaultClient = profbent.ApiClient.instance;
 // Configure HTTP basic authorization: basic
 let basic = defaultClient.authentications['basic'];
 basic.username = 'YOUR USERNAME';
 basic.password = 'YOUR PASSWORD';
 
-let apiInstance = new ProfbJsClient.UsersApi();
-let userid = new ProfbJsClient.Userid(); // Userid | 
+let apiInstance = new profbent.UsersApi();
+let userid = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
 apiInstance.updateUser(userid, (error, data, response) => {
   if (error) {
@@ -132,7 +132,7 @@ apiInstance.updateUser(userid, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userid** | [**Userid**](.md)|  | 
+ **userid** | [**String**](.md)|  | 
 
 ### Return type
 

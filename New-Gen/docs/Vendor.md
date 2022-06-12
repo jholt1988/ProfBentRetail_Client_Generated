@@ -1,4 +1,4 @@
-# ProfbJsClient.Vendor
+# profbent.Vendor
 
 ## Properties
 Name | Type | Description | Notes

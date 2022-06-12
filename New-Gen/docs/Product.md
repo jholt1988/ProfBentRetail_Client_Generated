@@ -1,4 +1,4 @@
-# ProfbJsClient.Product
+# profbent.Product
 
 ## Properties
 Name | Type | Description | Notes

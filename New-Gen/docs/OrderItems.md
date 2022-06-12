@@ -1,4 +1,4 @@
-# ProfbJsClient.OrderItems
+# profbent.OrderItems
 
 ## Properties
 Name | Type | Description | Notes

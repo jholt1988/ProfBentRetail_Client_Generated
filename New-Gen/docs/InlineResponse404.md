@@ -1,4 +1,4 @@
-# ProfbJsClient.InlineResponse404
+# profbent.InlineResponse404
 
 ## Properties
 Name | Type | Description | Notes

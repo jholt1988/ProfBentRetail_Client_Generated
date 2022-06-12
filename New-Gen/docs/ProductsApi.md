@@ -1,4 +1,4 @@
-# ProfbJsClient.ProductsApi
+# profbent.ProductsApi
 
 All URIs are relative to *https://virtserver.swaggerhub.com/holtenterprises/prof-bentley_ecommerce_api/1.5*
 
@@ -18,14 +18,14 @@ endpoint to get an array of all product records
 
 ### Example
 ```javascript
-import {ProfbJsClient} from 'profb-js-client';
-let defaultClient = ProfbJsClient.ApiClient.instance;
+import profbent from 'profb-js-client';
+let defaultClient = profbent.ApiClient.instance;
 // Configure HTTP basic authorization: basic
 let basic = defaultClient.authentications['basic'];
 basic.username = 'YOUR USERNAME';
 basic.password = 'YOUR PASSWORD';
 
-let apiInstance = new ProfbJsClient.ProductsApi();
+let apiInstance = new profbent.ProductsApi();
 apiInstance.getAllproducts((error, data, response) => {
   if (error) {
     console.error(error);
@@ -61,15 +61,15 @@ endpoint to get a single user record
 
 ### Example
 ```javascript
-import {ProfbJsClient} from 'profb-js-client';
-let defaultClient = ProfbJsClient.ApiClient.instance;
+import profbent from 'profb-js-client';
+let defaultClient = profbent.ApiClient.instance;
 // Configure HTTP basic authorization: basic
 let basic = defaultClient.authentications['basic'];
 basic.username = 'YOUR USERNAME';
 basic.password = 'YOUR PASSWORD';
 
-let apiInstance = new ProfbJsClient.ProductsApi();
-let productid = new ProfbJsClient.Productid(); // Productid | 
+let apiInstance = new profbent.ProductsApi();
+let productid = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 
 apiInstance.getProduct(productid, (error, data, response) => {
   if (error) {
@@ -84,7 +84,7 @@ apiInstance.getProduct(productid, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productid** | [**Productid**](.md)|  | 
+ **productid** | [**String**](.md)|  | 
 
 ### Return type
 
@@ -109,17 +109,17 @@ endpoint to update a single user record
 
 ### Example
 ```javascript
-import {ProfbJsClient} from 'profb-js-client';
-let defaultClient = ProfbJsClient.ApiClient.instance;
+import profbent from 'profb-js-client';
+let defaultClient = profbent.ApiClient.instance;
 // Configure HTTP basic authorization: basic
 let basic = defaultClient.authentications['basic'];
 basic.username = 'YOUR USERNAME';
 basic.password = 'YOUR PASSWORD';
 
-let apiInstance = new ProfbJsClient.ProductsApi();
-let productid = new ProfbJsClient.Productid(); // Productid | 
+let apiInstance = new profbent.ProductsApi();
+let productid = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // String | 
 let opts = { 
-  'body': new ProfbJsClient.Product() // Product | A new product to add to the system
+  'body': new profbent.Product() // Product | A new product to add to the system
 };
 apiInstance.updateProduct(productid, opts, (error, data, response) => {
   if (error) {
@@ -134,7 +134,7 @@ apiInstance.updateProduct(productid, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productid** | [**Productid**](.md)|  | 
+ **productid** | [**String**](.md)|  | 
  **body** | [**Product**](Product.md)| A new product to add to the system | [optional] 
 
 ### Return type

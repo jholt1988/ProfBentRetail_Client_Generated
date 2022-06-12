@@ -1,4 +1,4 @@
-# ProfbJsClient.InlineResponse200
+# profbent.InlineResponse200
 
 ## Properties
 Name | Type | Description | Notes

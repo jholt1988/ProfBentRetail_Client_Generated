@@ -1,4 +1,4 @@
-# ProfbJsClient.ExtendedErrorModel
+# profbent.ExtendedErrorModel
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# ProfbJsClient.Address
+# profbent.Address
 
 ## Properties
 Name | Type | Description | Notes

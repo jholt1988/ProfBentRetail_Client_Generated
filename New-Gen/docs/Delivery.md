@@ -1,4 +1,4 @@
-# ProfbJsClient.Delivery
+# profbent.Delivery
 
 ## Properties
 Name | Type | Description | Notes
